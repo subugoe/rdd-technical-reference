@@ -1,11 +1,14 @@
 \documentclass[11pt,twoside,a4paper]{article}
 
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
 \usepackage{hyperref}
 \def\tightlist{}
 
 \title{$title$}
-\date{Date of last change:\\
-$date$}
+\date{Date of last change:\\ \today}
 
 \begin{document}
 

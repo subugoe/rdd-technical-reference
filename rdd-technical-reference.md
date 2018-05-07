@@ -3,7 +3,6 @@ title: 'SUB RDD Technical Reference'
 
 author:
 - Software Quality Working Group
-date: 07.05.2018
 ...
 
 
