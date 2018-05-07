@@ -1,0 +1,16 @@
+\documentclass[11pt,twoside,a4paper]{article}
+
+\usepackage{hyperref}
+\def\tightlist{}
+
+\title{$title$}
+\date{Date of last change:\\
+$date$}
+
+\begin{document}
+
+\maketitle
+
+$body$
+
+\end{document}
