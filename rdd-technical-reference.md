@@ -34,6 +34,9 @@ software projects in RDD.
 
 ## Do you stick to our style guides?
 
+The basic definitions are given by our [EditorConfig](http://editorconfig.org/),
+i.e. unix line breaks and 2 space indentation.
+
 For the more prominent programming languages we have formatting and
 general style guides we ask you to follow:
 
