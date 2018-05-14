@@ -48,6 +48,9 @@ general style guides we ask you to follow:
 -   **HTML/CSS**: For HTML/CSS we agreed upon the [Google HTML/CSS Style
     Guide](https://google.github.io/styleguide/htmlcssguide.html). .
     @TODO: How to use in editor?
+- 	**XQuery**: We use the [xqdoc style guide](http://xqdoc.org/xquery-style.pdf) with the following addenda:
+	- use double quotes instead of single quotes
+
 -   **XSLT**: @TODO
 -   **SPARQL**: @TODO
 
