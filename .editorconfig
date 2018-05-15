@@ -1,0 +1,9 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+[*]
+# unix style line endings
+end_of_line = lf
+# indent by two spaces
+indent_style = space
+indent_size = 2
+
