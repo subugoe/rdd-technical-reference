@@ -34,8 +34,19 @@ software projects in RDD.
 
 ## Do you stick to our style guides?
 
+### General
+
 The basic definitions are given by our [EditorConfig](http://editorconfig.org/),
 i.e. unix line breaks and 2 space indentation.
+
+Unfortunately, not all editors support [EditorConfig](http://editorconfig.org/).
+In case you use **eXide**, the IDE that comes with [exist-db](http://exist-db.org/),
+you can set 2 space indentation as default by editing `/db/apps/eXide/src/preferences.js`.
+
+
+
+### Specific for programming languagues
+
 
 For the more prominent programming languages we have formatting and
 general style guides we ask you to follow:
