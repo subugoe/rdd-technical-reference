@@ -57,3 +57,31 @@ For the more prominent programming languages we have formatting and general styl
     - **{** paranthesis should be at the end of the line. @TODO: examples
     - Group concatenations in SELECT command should be in seperate lines.
     - @TODO: more
+
+
+## Is your software fully documented?
+
+
+## Which version control do you use? You do use version control, do you?
+
+
+## What is your test coverage?
+
+
+## Code building and continuous integration
+
+
+# Helpful links and references
+
+
+- DARIAH Technical Reference: <https://dariah-eric.github.io/technical-reference>
+
+- DHTech -- An international grass-roots community of Digital Humanities software engineers: <https://dh-tech.github.io>
+
+- The Software Sustainability Institute, Guidelines and publicartions: <https://www.software.ac.uk>
+
+- The Joel Test: 12 Steps to Better Code: <https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code>
+
+- Software Quality Guidelines: <https://github.com/CLARIAH/software-quality-guidelines>
+
+- Software Testing Levels: <http://softwaretestingfundamentals.com/software-testing-levels>
