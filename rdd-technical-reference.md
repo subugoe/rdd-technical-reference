@@ -41,17 +41,19 @@ For the more prominent programming languages we have formatting and general styl
 
 -   **Java**: The Java style guide can be found [here](./styles/rdd-eclipse-java-google-style.xml). It's based on the [Google style guide for Java](https://github.com/google/styleguide) with some minor RDD specific setting. You can configure Eclipse to use it automatically at *Eclipse &gt; Preferences &gt; Java &gt; Code Style &gt; Formatter*. Just load the [RDD Eclipse Java Google Style](https://raw.githubusercontent.com/subugoe/rdd-technical-reference/master/styles/rdd-eclipse-java-google-style.xml) in the formatter preferences and use it in your RDD projects.
 
--   **JavaScript**: For JS we use the [Airbnb JavaScript Style
-    Guide](https://github.com/airbnb/javascript). @TODO: How to use in
-    editor?
+-   **JavaScript**: For JS we use the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript). @TODO: How to use in editor?
 
--   **HTML/CSS**: For HTML/CSS we agreed upon the [Google HTML/CSS Style
-    Guide](https://google.github.io/styleguide/htmlcssguide.html). .
-    @TODO: How to use in editor?
+-   **HTML/CSS**: For HTML/CSS we agreed upon the [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html). @TODO: How to use in editor?
 
 - 	**XQuery**: We use the [xqdoc style guide](http://xqdoc.org/xquery-style.pdf) with the following addenda:
-	- use double quotes instead of single quotes
+
+    - use double quotes instead of single quotes
 
 -   **XSLT**: @TODO
 
--   **SPARQL**: @TODO
+-   **SPARQL**: For SPARQL there is not really any official style guide and there is no possibility to simply include any code style automatically using a code style file. We just collect some advices how to format and use SPARQL code.
+
+    - Declaration of variables should start with a **?** (and not with a **$**).
+    - **{** paranthesis should be at the end of the line. @TODO: examples
+    - Group concatenations in SELECT command should be in seperate lines.
+    - @TODO: more
