@@ -39,7 +39,7 @@ you can set 2 space indentation as default by editing `/db/apps/eXide/src/prefer
 
 For the more prominent programming languages we have formatting and general style guides we ask you to follow:
 
--   **Java**: The Java style guide can be found [here](./styles/rdd-eclipse-java-google-style.xml). It's based on the [Google style guide for Java](https://github.com/google/styleguide) with some minor RDD specific setting. You can configure Eclipse to use it automatically at *Eclipse &gt; Preferences &gt; Java &gt; Code Style &gt; Formatter*. Just load the RDD Eclipse Java Google Style in the formatter preferences and use it in your RDD projects.
+-   **Java**: The Java style guide can be found [here](./styles/rdd-eclipse-java-google-style.xml). It's based on the [Google style guide for Java](https://github.com/google/styleguide) with some minor RDD specific setting. You can configure Eclipse to use it automatically at *Eclipse &gt; Preferences &gt; Java &gt; Code Style &gt; Formatter*. Just load the [RDD Eclipse Java Google Style](https://raw.githubusercontent.com/subugoe/rdd-technical-reference/master/styles/rdd-eclipse-java-google-style.xml) in the formatter preferences and use it in your RDD projects.
 
 -   **JavaScript**: For JS we use the [Airbnb JavaScript Style
     Guide](https://github.com/airbnb/javascript). @TODO: How to use in
