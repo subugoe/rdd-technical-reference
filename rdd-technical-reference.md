@@ -49,7 +49,9 @@ For the more prominent programming languages we have formatting and general styl
 
     - use double quotes instead of single quotes
 
--   **XSLT**: @TODO
+-   **XSLT**: Since there is no official style guide for XSLT, we decided to write
+[our own](https://github.com/subugoe/rdd-technical-reference/tree/master/style-guides/FE-XSLT.pdf), resulting from common best practices and own experiences within
+the department.
 
 -   **SPARQL**: For SPARQL there is not really any official style guide and there is no possibility to simply include any code style automatically using a code style file. We just collect some advices how to format and use SPARQL code.
 
