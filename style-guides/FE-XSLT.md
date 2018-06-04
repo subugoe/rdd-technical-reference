@@ -104,7 +104,13 @@ they are too long.
 
 ### Quotation marks
 
-Use double (`" "`) quotation marks.
+Use double (`" "`) quotation marks at the top level, e.g. attributes within the xsl namespace.
+Use apostrophes (`' '`) for parameters of XQuery functions or any other second level.
+Include decimal unicode references (`&#34; = "` and `&#39; = '`) when there is a need for single or double quotations marks at any higher level.
+
+### Special Characters
+
+Include visible special characters directly whenever it is possible. Use decimal unicode references for non-standard whitespace characters and combining characters.
 
 ### Mind performance
 
