@@ -63,6 +63,44 @@ the department.
 
 ## Is your software fully documented?
 
+### General issues
+
+- don't document computer language's interna
+
+- best use languagee structure to document
+
+- write the best documentation you can
+
+- where to document the code? where is it documented in RDD?
+
+- documentation and variable language is American English
+
+- should be as code-near as possible
+
+- exit strategies!
+
+- TODO fugu: see <https://wiki.de.dariah.eu/pages/viewpage.action?pageId=64957922>
+
+- code quality level for RDD
+
+### Developer Documentation
+
+- API documentation
+
+    - used parameters, author and since annotations
+    - links to callers? who is calling this method, and when?
+    - see Dennis' LABSUBBLOG entry
+
+### Admin Documentation
+
+- how to install the software, how to run and/or restart it, how to test the installation, ...
+
+- server documentation
+
+### User Documentation
+
+- how to use the software and APIs, FAQs, walkthroughs, ...
+
 
 ## Which version control do you use? You do use version control, do you?
 
