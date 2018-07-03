@@ -107,6 +107,18 @@ the department.
 
 ## What is your test coverage?
 
+We aim to have a test coverage of **100%** (except for getter and setter methods). 
+Whether you achive this by Test Driven Development (TDD) or not is specific to
+yout preferred way to work. 
+
+Please keep in mind not only to write a test for each of your functions but also
+to consider all possible outcomes. It is e.g. not sufficient to test if a function
+creates a file if the written content depends on variables etc.
+
+Examples for different programming languages are:
+
+- **XQuery**: <https://gist.github.com/joewiz/fa32be80749a69fcb8da>
+
 
 ## Code building and continuous integration
 
