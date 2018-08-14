@@ -41,13 +41,14 @@ For the more prominent programming languages we have formatting and general styl
 
 -   **Java**: The Java style guide can be found [here](./styles/rdd-eclipse-java-google-style.xml). It's based on the [Google style guide for Java](https://github.com/google/styleguide) with some minor RDD specific setting. You can configure Eclipse to use it automatically at *Eclipse &gt; Preferences &gt; Java &gt; Code Style &gt; Formatter*. Just load the [RDD Eclipse Java Google Style](https://raw.githubusercontent.com/subugoe/rdd-technical-reference/master/styles/rdd-eclipse-java-google-style.xml) in the formatter preferences and use it in your RDD projects.
 
--   **JavaScript**: For JS we use the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript). @TODO: How to use in editor?
+-   **JavaScript**: For JS we use the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript). @TODO uv: How to use in editor?
 
--   **HTML/CSS**: For HTML/CSS we agreed upon the [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html). @TODO: How to use in editor?
+-   **HTML/CSS**: For HTML/CSS we agreed upon the [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html). @TODO mr: How to use in editor?
 
 - 	**XQuery**: We use the [xqdoc style guide](http://xqdoc.org/xquery-style.pdf) with the following addenda:
 
-    - use double quotes instead of single quotes
+    - use double quotes instead of single quotes (for easy escaping) @TODO all: Discuss again with mg
+    - use four spaces for a TAB (because eXide makes it so)
 
 -   **XSLT**: Since there is no official style guide for XSLT, we decided to write
 [our own](https://github.com/subugoe/rdd-technical-reference/tree/master/style-guides/FE-XSLT.pdf), resulting from common best practices and own experiences within
@@ -56,9 +57,8 @@ the department.
 -   **SPARQL**: For SPARQL there is not really any official style guide and there is no possibility to simply include any code style automatically using a code style file. We just collect some advices how to format and use SPARQL code.
 
     - Declaration of variables should start with a **?** (and not with a **$**).
-    - **{** paranthesis should be at the end of the line. @TODO: examples
+    - **{** paranthesis should be at the end of the line. @TODO mb: Provide examples
     - Group concatenations in SELECT command should be in seperate lines.
-    - @TODO: more
 
 
 ## Is your software fully documented?
@@ -79,7 +79,7 @@ the department.
 
 - exit strategies!
 
-- TODO fugu: see <https://wiki.de.dariah.eu/pages/viewpage.action?pageId=64957922>
+- @TODO fugu: see <https://wiki.de.dariah.eu/pages/viewpage.action?pageId=64957922>
 
 - code quality level for RDD
 
@@ -107,9 +107,9 @@ the department.
 
 ## What is your test coverage?
 
-We aim to have a test coverage of **100%** (except for getter and setter methods). 
+We aim to have a test coverage of **100%** (except for getter and setter methods).
 Whether you achive this by Test Driven Development (TDD) or not is specific to
-yout preferred way to work. 
+yout preferred way to work.
 
 Please keep in mind not only to write a test for each of your functions but also
 to consider all possible outcomes. It is e.g. not sufficient to test if a function
