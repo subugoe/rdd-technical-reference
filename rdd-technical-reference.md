@@ -56,9 +56,9 @@ the department.
 
 -   **SPARQL**: For SPARQL there is not really any official style guide and there is no possibility to simply include any code style automatically using a code style file. We just collect some advices how to format and use SPARQL code.
 
-    - Declaration of variables should start with a **?** (and not with a **$**).
+    - declaration of variables should start with a **?** (and not with a **$**).
     - **{** paranthesis should be at the end of the line. @TODO mb: Provide examples
-    - Group concatenations in SELECT command should be in seperate lines.
+    - group concatenations in SELECT command should be in seperate lines.
 
 
 ## Is your software fully documented?
@@ -67,11 +67,9 @@ the department.
 
 - don't document computer language's interna
 
-- best use languagee structure to document
+- best use language structure to document
 
 - write the best documentation you can
-
-- where to document the code? where is it documented in RDD?
 
 - documentation and variable language is American English
 
@@ -81,7 +79,21 @@ the department.
 
 - @TODO fugu: see <https://wiki.de.dariah.eu/pages/viewpage.action?pageId=64957922>
 
-- code quality level for RDD
+- where to document the code? where is it documented in RDD?
+
+- code quality level for RDD?
+
+- every code repo must have
+
+    - a README.md file that contains
+        - short introduction
+        - link to demo instance
+        - example or demo installation
+        - link to licence file
+        - contribution guide, link to style guide, link to bugtracker
+        - known issues
+        - badges to ci status
+    - a LICENCE file
 
 ### Developer Documentation
 
@@ -90,6 +102,13 @@ the department.
     - used parameters, author and since annotations
     - links to callers? who is calling this method, and when?
     - see Dennis' LABSUBBLOG entry
+
+- architecture of the software
+
+    - use UML? use automatted tools?
+    - must be updated regularly!
+
+- meet and write documentation together regularly?
 
 ### Admin Documentation
 
@@ -100,6 +119,13 @@ the department.
 ### User Documentation
 
 - how to use the software and APIs, FAQs, walkthroughs, ...
+
+- guided tour (Bootstrap Tour) as user documentation
+
+    - for SADE portal usage (such as Fontane, BdN, Architrave)
+    - for complex Digital Editions
+
+- screencasts
 
 
 ## Which version control do you use? You do use version control, do you?
