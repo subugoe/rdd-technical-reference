@@ -13,6 +13,8 @@
 
 \begin{document}
 
+\renewcommand{\contentsname}{Table of Contents}
+
 \maketitle
 
 \newpage
