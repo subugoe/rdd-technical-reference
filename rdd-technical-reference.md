@@ -14,6 +14,7 @@ This guideline should help you getting started a new software development projec
 Our goal is to establish better software quality by following standards the developer team has mutually agreed upon. Roughly basing on the [DARIAH Technical Reference](https://dariah-eric.github.io/technical-reference/), these standards are discussed, worked out, and decided in the Software Quality Working Group, which meets biweekly on Tuesdays at 12:30-13:30. However, they aren't cast in stone, so in case you have a good idea for a better standard, feel free to contribute!
 
 
+
 # Status
 
 This document is a living document and will be extended as soon as the Software Quality Working Group has agreed upon a new standard for software projects in RDD.
@@ -33,8 +34,6 @@ Unfortunately, not all editors support [EditorConfig](http://editorconfig.org/).
 In case you use **eXide**, the IDE that comes with [exist-db](http://exist-db.org/),
 you can set 2 space indentation as default by editing `/db/apps/eXide/src/preferences.js`.
 
-
-
 ### Specific for programming languagues
 
 For the more prominent programming languages we have formatting and general style guides we ask you to follow:
@@ -43,7 +42,7 @@ For the more prominent programming languages we have formatting and general styl
 
 -   **JavaScript**: For JS we use the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript). @TODO uv: How to use in editor?
 
--   **HTML/CSS**: For HTML/CSS we agreed upon the [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html). @TODO mr: How to use in editor?
+-   **HTML/CSS**: For HTML/CSS we agreed upon the [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html). @TODO mw: How to use in editor?
 
 - 	**XQuery**: We use the [xqdoc style guide](http://xqdoc.org/xquery-style.pdf) with the following addenda:
 
@@ -60,7 +59,6 @@ the department.
     - **{** paranthesis should be at the end of the line. @TODO mb: Provide examples
     - group concatenations in SELECT command should be in seperate lines.
 
-
 ## Is your software fully documented?
 
 ### General issues
@@ -75,14 +73,6 @@ the department.
 
 - should be as code-near as possible
 
-- exit strategies!
-
-- @TODO fugu: see <https://wiki.de.dariah.eu/pages/viewpage.action?pageId=64957922>
-
-- where to document the code? where is it documented in RDD?
-
-- code quality level for RDD?
-
 - every code repo must have
 
     - a README.md file that contains
@@ -95,18 +85,25 @@ the department.
         - badges to ci status
     - a LICENCE file
 
+- @TODO fu: see <https://wiki.de.dariah.eu/pages/viewpage.action?pageId=64957922>
+
+- where to document the code? where is it documented in RDD?
+
 ### Developer Documentation
-
-- API documentation
-
-    - used parameters, author and since annotations
-    - links to callers? who is calling this method, and when?
-    - see Dennis' LABSUBBLOG entry
 
 - architecture of the software
 
     - use UML? use automatted tools?
     - must be updated regularly!
+    - @TODO mw: Looks for XQuery architecture things <https://github.com/vronk/SADE/tree/METS-crxq/docs>
+    - @TODO fu: Looks for JAVA ULM things (crud)
+    - @TODO fu: See Dennis' LABSUBBLOG entry <https://lab.sub.uni-goettingen.de/self-updating-docs.html>
+    - @TODO fu, uv: Looks for UML diagram for tg-iiif-metadata
+
+- API documentation
+
+    - used parameters, author and since annotations
+    - links to callers? who is calling this method, and when?
 
 - meet and write documentation together regularly?
 
@@ -127,9 +124,7 @@ the department.
 
 - screencasts
 
-
 ## Which version control do you use? You do use version control, do you?
-
 
 ## What is your test coverage?
 
@@ -145,8 +140,16 @@ Examples for different programming languages are:
 
 - **XQuery**: <https://gist.github.com/joewiz/fa32be80749a69fcb8da>
 
-
 ## Code building and continuous integration
+
+
+# Code quality level for RDD
+
+
+# Licencing
+
+
+# Requirements engineering
 
 
 # Helpful links and references
