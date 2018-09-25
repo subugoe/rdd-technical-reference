@@ -8,11 +8,18 @@
 \def\tightlist{}
 
 \title{$title$}
-\date{Date of last change:\\ \today}
+
+\date{\today \vspace{5cm} \small{\texttt{<https://github.com/subugoe/rdd-technical-reference>}}}
 
 \begin{document}
 
 \maketitle
+
+\newpage
+
+\tableofcontents
+
+\newpage
 
 $body$
 
