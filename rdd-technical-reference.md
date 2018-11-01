@@ -166,3 +166,5 @@ Examples for different programming languages are:
 - Software Quality Guidelines: <https://github.com/CLARIAH/software-quality-guidelines>
 
 - Software Testing Levels: <http://softwaretestingfundamentals.com/software-testing-levels>
+
+++TODO++ add <https://github.com/eurise-network>
