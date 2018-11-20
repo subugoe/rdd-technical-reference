@@ -23,6 +23,7 @@ This document is a living document and will be extended as soon as the Software 
 
 # Guidelines
 
+
 ## Do you stick to our code style guides?
 
 ### General
@@ -40,24 +41,25 @@ For the more prominent programming languages we have formatting and general styl
 
 -   **Java**: The Java style guide can be found [here](./styles/rdd-eclipse-java-google-style.xml). It's based on the [Google style guide for Java](https://github.com/google/styleguide) with some minor RDD specific setting. You can configure Eclipse to use it automatically at *Eclipse &gt; Preferences &gt; Java &gt; Code Style &gt; Formatter*. Just load the [RDD Eclipse Java Google Style](https://raw.githubusercontent.com/subugoe/rdd-technical-reference/master/styles/rdd-eclipse-java-google-style.xml) in the formatter preferences and use it in your RDD projects.
 
--   **JavaScript**: For JS we use the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript). @TODO uv: How to use in editor?
+- **JavaScript**: For JS we use the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript). @TODO uv: How to use in editor?
 
--   **HTML/CSS**: For HTML/CSS we agreed upon the [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html). @TODO mw: How to use in editor?
+- **HTML/CSS**: For HTML/CSS we agreed upon the [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html). @TODO mw: How to use in editor?
 
-- 	**XQuery**: We use the [xqdoc style guide](http://xqdoc.org/xquery-style.pdf) with the following addenda:
+- **XQuery**: We use the [xqdoc style guide](http://xqdoc.org/xquery-style.pdf) with the following addenda:
 
     - use double quotes instead of single quotes (for easy escaping) @TODO all: Discuss again with mg
     - use four spaces for a TAB (because eXide makes it so)
 
--   **XSLT**: Since there is no official style guide for XSLT, we decided to write
+- **XSLT**: Since there is no official style guide for XSLT, we decided to write
 [our own](https://github.com/subugoe/rdd-technical-reference/tree/master/style-guides/FE-XSLT.pdf), resulting from common best practices and own experiences within
 the department.
 
--   **SPARQL**: For SPARQL there is not really any official style guide and there is no possibility to simply include any code style automatically using a code style file. We just collect some advices how to format and use SPARQL code.
+- **SPARQL**: For SPARQL there is not really any official style guide and there is no possibility to simply include any code style automatically using a code style file. We just collect some advices how to format and use SPARQL code.
 
     - declaration of variables should start with a **?** (and not with a **$**).
     - **{** paranthesis should be at the end of the line. @TODO mb: Provide examples
     - group concatenations in SELECT command should be in seperate lines.
+
 
 ## Is your software fully documented?
 
@@ -89,20 +91,22 @@ the department.
 
 - where to document the code? where is it documented in RDD?
 
-### Developer Documentation
+### Developer documentation
 
-- architecture of the software
+#### Architecture of the software
 
-    - use UML? use automatted tools?
-    - must be updated regularly!
+Each software project should be documented using an architecture diagram that helps understanding its basic functionality (using tools to generate diagrams such as UML class diagrams seems not to be possible in every case).
+
+Examples:
     - @TODO mw: Looks for XQuery architecture things <https://github.com/vronk/SADE/tree/METS-crxq/docs>
     - @TODO fu: Looks for JAVA ULM things (crud)
-    - @TODO fu: See Dennis' LABSUBBLOG entry <https://lab.sub.uni-goettingen.de/self-updating-docs.html>
-    - @TODO fu, uv: Looks for UML diagram for tg-iiif-metadata
 
-- API documentation
+Call diagrams can be useful to follow code and service calls and should be existing for every API call.
+
+#### API documentation
 
     - used parameters, author and since annotations
+    - @TODO fu: See Dennis' LABSUBBLOG entry <https://lab.sub.uni-goettingen.de/self-updating-docs.html>
     - links to callers? who is calling this method, and when?
 
 - meet and write documentation together regularly?
@@ -124,7 +128,11 @@ the department.
 
 - screencasts
 
+
 ## Which version control do you use? You do use version control, do you?
+
+- @TODO: Source code versioning systems (Git) and how to use them in RDD (Github, GitLab, Projects)
+
 
 ## What is your test coverage?
 
@@ -140,7 +148,14 @@ Examples for different programming languages are:
 
 - **XQuery**: <https://gist.github.com/joewiz/fa32be80749a69fcb8da>
 
+
 ## Code building and continuous integration
+
+- @TODO: Bug tracking (such as Projects, Gitlab, Github)
+
+- @Todo: Code building (such as Jenkins, Gitlab Runner)
+
+- @TDOO: Monitoring (such as Icinga)
 
 
 # Code quality level for RDD
@@ -154,8 +169,7 @@ Examples for different programming languages are:
 
 # Helpful links and references
 
-
-- DARIAH Technical Reference: <https://dariah-eric.github.io/technical-reference>
+- eurise-network technical-reference: <https://github.com/eurise-network/technical-reference>
 
 - DHTech -- An international grass-roots community of Digital Humanities software engineers: <https://dh-tech.github.io>
 
@@ -166,5 +180,3 @@ Examples for different programming languages are:
 - Software Quality Guidelines: <https://github.com/CLARIAH/software-quality-guidelines>
 
 - Software Testing Levels: <http://softwaretestingfundamentals.com/software-testing-levels>
-
-++TODO++ add <https://github.com/eurise-network>
