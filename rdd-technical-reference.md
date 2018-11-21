@@ -167,6 +167,9 @@ Examples for different programming languages are:
 # Requirements engineering
 
 
+# Retirement of software
+
+
 # Helpful links and references
 
 - eurise-network technical-reference: <https://github.com/eurise-network/technical-reference>
