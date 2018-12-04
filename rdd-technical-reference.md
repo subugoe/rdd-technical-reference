@@ -39,7 +39,7 @@ you can set 2 space indentation as default by editing `/db/apps/eXide/src/prefer
 
 For the more prominent programming languages we have formatting and general style guides we ask you to follow:
 
--   **Java**: The Java style guide can be found [here](./styles/rdd-eclipse-java-google-style.xml). It's based on the [Google style guide for Java](https://github.com/google/styleguide) with some minor RDD specific setting. You can configure Eclipse to use it automatically at *Eclipse &gt; Preferences &gt; Java &gt; Code Style &gt; Formatter*. Just load the [RDD Eclipse Java Google Style](https://raw.githubusercontent.com/subugoe/rdd-technical-reference/master/styles/rdd-eclipse-java-google-style.xml) in the formatter preferences and use it in your RDD projects.
+- **Java**: The Java style guide can be found [here](./styles/rdd-eclipse-java-google-style.xml). It's based on the [Google style guide for Java](https://github.com/google/styleguide) with some minor RDD specific setting. You can configure Eclipse to use it automatically at *Eclipse &gt; Preferences &gt; Java &gt; Code Style &gt; Formatter*. Just load the [RDD Eclipse Java Google Style](https://raw.githubusercontent.com/subugoe/rdd-technical-reference/master/styles/rdd-eclipse-java-google-style.xml) in the formatter preferences and use it in your RDD projects.
 
 - **JavaScript**: For JS we use the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript). @TODO uv: How to use in editor?
 
@@ -77,12 +77,15 @@ the department.
 
 - every code repo must have
 
-    - a README.md file that contains
+    - a README.md file that contains @TODO mw: provide link to example
+        - link to original repository
         - short introduction
         - link to demo instance
         - example or demo installation
         - link to licence file
-        - contribution guide, link to style guide, link to bugtracker
+        - contribution guide
+        - link to style guide
+        - link to bugtracker/project managemenmt system
         - known issues
         - badges to ci status
     - a LICENCE file
@@ -99,15 +102,16 @@ Each software project should be documented using an architecture diagram that he
 
 Examples:
     - @TODO mw: Looks for XQuery architecture things <https://github.com/vronk/SADE/tree/METS-crxq/docs>
-    - @TODO fu: Looks for JAVA ULM things (crud)
+    - @TODO fu: Looks for JAVA ULM things (crud?)
 
 Call diagrams can be useful to follow code and service calls and should be existing for every API call.
 
 #### API documentation
 
     - used parameters, author and since annotations
-    - @TODO fu: See Dennis' LABSUBBLOG entry <https://lab.sub.uni-goettingen.de/self-updating-docs.html>
+    - @TODO fu (Java): See Dennis' LABSUBBLOG entry <https://lab.sub.uni-goettingen.de/self-updating-docs.html>
     - links to callers? who is calling this method, and when?
+    - @TODO mw: Test Swagger and REST API for Getty API <https://dracor.org/documentation/api/> and <https://app.swaggerhub.com/apis/swub/gdz-fulltext_api/1.0.0>
 
 - meet and write documentation together regularly?
 
@@ -131,7 +135,25 @@ Call diagrams can be useful to follow code and service calls and should be exist
 
 ## Which version control do you use? You do use version control, do you?
 
-- @TODO: Source code versioning systems (Git) and how to use them in RDD (Github, GitLab, Projects)
+We are using GIT in RDD! Nothing else! How it works, please see <https://git-scm.com/doc>.
+
+We recommend to use Gitflow (<@TODO mw: Link raussuchen> and <https://danielkummer.github.io/git-flow-cheatsheet>) and the protection of the develop and master branches.
+
+Automatically closing issues via commit message depends on the Git repository server. @TODO mw: References to other issues, etcpp.
+
+Wihch repo you are using depends on:
+
+* the project
+* existing code
+* using Gitlab Runners
+* ...
+
+
+## Are you tracking your bugs properly?
+
+A bug tracking system is obligatory! Please use the respective bug tracking system of your repo and/or project management solution (please see chapter version control)!
+
+@TODO mirroring of repos for project visibility!?
 
 
 ## What is your test coverage?
@@ -151,9 +173,9 @@ Examples for different programming languages are:
 
 ## Code building and continuous integration
 
-- @TODO: Bug tracking (such as Projects, Gitlab, Github)
+- @TODO: Code building (such as Jenkins, Gitlab Runner)
 
-- @Todo: Code building (such as Jenkins, Gitlab Runner)
+- @TODO: Provide complete example for Jenkins and Gitlab runner!
 
 - @TDOO: Monitoring (such as Icinga)
 
