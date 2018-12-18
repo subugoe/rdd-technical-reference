@@ -41,13 +41,13 @@ For the more prominent programming languages we have formatting and general styl
 
 - **Java**: The Java style guide can be found [here](./styles/rdd-eclipse-java-google-style.xml). It's based on the [Google style guide for Java](https://github.com/google/styleguide) with some minor RDD specific setting. You can configure Eclipse to use it automatically at *Eclipse &gt; Preferences &gt; Java &gt; Code Style &gt; Formatter*. Just load the [RDD Eclipse Java Google Style](https://raw.githubusercontent.com/subugoe/rdd-technical-reference/master/styles/rdd-eclipse-java-google-style.xml) in the formatter preferences and use it in your RDD projects.
 
-- **JavaScript**: For JS we use the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript). @TODO uv: How to use in editor?
+- **JavaScript**: For JS we use the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript). @TODO uv: Tutorials verlinken!
 
-- **HTML/CSS**: For HTML/CSS we agreed upon the [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html). @TODO mw: How to use in editor?
+- **HTML/CSS**: For HTML/CSS we agreed upon the [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html).
 
 - **XQuery**: We use the [xqdoc style guide](http://xqdoc.org/xquery-style.pdf) with the following addenda:
 
-    - use double quotes instead of single quotes (for easy escaping) @TODO all: Discuss again with mg
+    - use double quotes instead of single quotes (for easy escaping)
     - use four spaces for a TAB (because eXide makes it so)
 
 - **XSLT**: Since there is no official style guide for XSLT, we decided to write
@@ -57,8 +57,19 @@ the department.
 - **SPARQL**: For SPARQL there is not really any official style guide and there is no possibility to simply include any code style automatically using a code style file. We just collect some advices how to format and use SPARQL code.
 
     - declaration of variables should start with a **?** (and not with a **$**).
-    - **{** paranthesis should be at the end of the line. @TODO mb: Provide examples
+    - opening parenthesis **{** should be at the end of the line. Closing parenthesis in a separate line.
+
+'''
+SELECT * WHERE {
+    ?s ?p ?o .
+} LIMIT 10
+'''
+
     - group concatenations in SELECT command should be in seperate lines.
+
+'''
+    **TODO** @Max: Provide example
+'''
 
 
 ## Is your software fully documented?
@@ -90,10 +101,6 @@ the department.
         - badges to ci status
     - a LICENCE file
 
-- @TODO fu: see <https://wiki.de.dariah.eu/pages/viewpage.action?pageId=64957922>
-
-- where to document the code? where is it documented in RDD?
-
 ### Developer documentation
 
 #### Architecture of the software
@@ -101,19 +108,20 @@ the department.
 Each software project should be documented using an architecture diagram that helps understanding its basic functionality (using tools to generate diagrams such as UML class diagrams seems not to be possible in every case).
 
 Examples:
-    - @TODO mw: Looks for XQuery architecture things <https://github.com/vronk/SADE/tree/METS-crxq/docs>
-    - @TODO fu: Looks for JAVA ULM things (crud?)
+    - @TODO mw: call graph
+    - @TODO fu: Looks for JAVA UML things (crud?)
 
-Call diagrams can be useful to follow code and service calls and should be existing for every API call.
+Call diagrams can be useful to follow code and service calls and should be existing for every API method.
 
 #### API documentation
 
-    - used parameters, author and since annotations
-    - @TODO fu (Java): See Dennis' LABSUBBLOG entry <https://lab.sub.uni-goettingen.de/self-updating-docs.html>
-    - links to callers? who is calling this method, and when?
-    - @TODO mw: Test Swagger and REST API for Getty API <https://dracor.org/documentation/api/> and <https://app.swaggerhub.com/apis/swub/gdz-fulltext_api/1.0.0>
+- used parameters, author and since annotations
 
-- meet and write documentation together regularly?
+- example for Java: <https://lab.sub.uni-goettingen.de/self-updating-docs.html>
+
+- links to callers? who is calling this method, and when?
+
+- meet and write documentation together regularly (documentation sprint)?
 
 ### Admin Documentation
 
@@ -137,23 +145,25 @@ Call diagrams can be useful to follow code and service calls and should be exist
 
 We are using GIT in RDD! Nothing else! How it works, please see <https://git-scm.com/doc>.
 
-We recommend to use Gitflow (<@TODO mw: Link raussuchen> and <https://danielkummer.github.io/git-flow-cheatsheet>) and the protection of the develop and master branches.
+We recommend to use Gitflow Workflow: <https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow>, Cheat Sheet: <https://danielkummer.github.io/git-flow-cheatsheet>), if possible on server side: use protection of the develop and master branches.
 
 Automatically closing issues via commit message depends on the Git repository server. @TODO mw: References to other issues, etcpp.
 
-Wihch repo you are using depends on:
+Which repo you are using depends on:
 
-* the project
-* existing code
-* using Gitlab Runners
-* ...
+**TODO**: Which repos do we have in rdd? Provide links!
+
+- the project
+- existing code
+- using Gitlab Runners
+- ...
+
+Consider mirroring of repos for project visibility (e.g. mirror Gitlab code to Github?)
 
 
 ## Are you tracking your bugs properly?
 
 A bug tracking system is obligatory! Please use the respective bug tracking system of your repo and/or project management solution (please see chapter version control)!
-
-@TODO mirroring of repos for project visibility!?
 
 
 ## What is your test coverage?
@@ -175,18 +185,18 @@ Examples for different programming languages are:
 
 - @TODO: Code building (such as Jenkins, Gitlab Runner)
 
-- @TODO: Provide complete example for Jenkins and GitLab runner.
+- @TODO: Provide complete examples for Jenkins and GitLab runner.
 
-- @TDOO: Monitoring (such as Icinga)
+- @TDOO: Monitoring (such as Icinga, Metrics)
 
 
 # Code quality level for RDD
 
+- Evaluate Software Maturity Levels from CESSDA: **TODO**: @mw
+
 
 # Licencing
-
-
-# Requirements engineering
+ engineering
 
 
 # Retirement of software
