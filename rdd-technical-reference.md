@@ -151,14 +151,21 @@ Automatically closing issues via commit message depends on the Git repository se
 
 Which repo you are using depends on:
 
-**TODO**: Which repos do we have in rdd? Provide links!
-
 - the project
 - existing code
 - using Gitlab Runners
 - ...
 
-Consider mirroring of repos for project visibility (e.g. mirror Gitlab code to Github?)
+We use the following at the moment in RDD:
+
+- Projects (GWDG) --> <https://projects.gwdg.de>
+- Gitlab (GWDG) --> <https://gitlab.gwdg.de>
+- github.org --> <https://github.com/subugoe>
+
+We have got an RDD team on Github: <https://github.com/orgs/subugoe/teams/fe>
+
+
+Consider mirroring of repos for project visibility (e.g. mirror Gitlab/Projects code to Github?)
 
 
 ## Are you tracking your bugs properly?
@@ -192,11 +199,10 @@ Examples for different programming languages are:
 
 # Code quality level for RDD
 
-- Evaluate Software Maturity Levels from CESSDA: **TODO**: @mw
+- Evaluate Software maturity Levels from CESSDA: **TODO**: @mw
 
 
 # Licencing
- engineering
 
 
 # Retirement of software
