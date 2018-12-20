@@ -201,11 +201,23 @@ Examples for different programming languages are:
 
 - Evaluate Software maturity Levels from CESSDA: **TODO**: @mw
 
+- @TODO: Code reviewing, evaluate quality level
+
+- @TODO: Wissenschaftliche Standards für wissenschaftliche Software?!
+
 
 # Licencing
 
+- clarify software licence before programming
+
+- add licence to code header
+
+- @TODO: depends on used software libraries, project and/or funder
+
 
 # Retirement of software
+
+- clarify if software is no longer supported
 
 
 # Helpful links and references
