@@ -9,17 +9,18 @@ author:
 
 # Purpose
 
-This guideline should help you getting started a new software development project (or improving an existing one!) in the Research and Development Department of the Göttingen State and University Library.
+This guideline should help you getting started with a new software development project (or improving an existing one!) in the Research and Development Department of the Göttingen State and University Library.
 
-Our goal is to establish better software quality by following standards the developer team has mutually agreed upon. Roughly basing on the [DARIAH Technical Reference](https://dariah-eric.github.io/technical-reference/), these standards are discussed, worked out, and decided in the Software Quality Working Group, which meets biweekly on Tuesdays at 12:30-13:30. However, they aren't cast in stone, so in case you have a good idea for a better standard, feel free to contribute!
-
-
+Our goal is to establish better software quality by following standards the developer team has mutually agreed upon. Roughly basing on the [EURISE-Network Technical Reference](https://eurise-network.github.io/), these standards are discussed, worked out and decided on in the Software Quality Working Group which meets biweekly on Tuesdays at 12:30-13:30. However, they aren't cast in stone, so in case you have a good idea for a better standard, feel free to contribute!
 
 
 # Status
-This document is a living document and will be extended as soon as the Software Quality Working Group has agreed upon a new standard for software projects in RDD.
+This document is a living document and will be extended every time the Software Quality Working Group has agreed upon a new standard for software projects in RDD.
 
 
+# Obligatoriness
+
+Every developer in RDD should stick to these guidelines. Of course you can adjust them to the project specific requirements after consulting your PI.
 
 # Guidelines
 
@@ -28,12 +29,8 @@ This document is a living document and will be extended as soon as the Software 
 
 ### General
 
-The basic definitions are given by our [EditorConfig](http://editorconfig.org/),
-i.e. unix line breaks and 2 space indentation.
+The basic definitions are given by our [EditorConfig](http://editorconfig.org/), i.e. Unix line breaks and 2 space indentation.
 
-Unfortunately, not all editors support [EditorConfig](http://editorconfig.org/).
-In case you use **eXide**, the IDE that comes with [exist-db](http://exist-db.org/),
-you can set 2 space indentation as default by editing `/db/apps/eXide/src/preferences.js`.
 
 ### Specific for programming languagues
 
@@ -41,14 +38,13 @@ For the more prominent programming languages we have formatting and general styl
 
 - **Java**: The Java style guide can be found [here](./styles/rdd-eclipse-java-google-style.xml). It's based on the [Google style guide for Java](https://github.com/google/styleguide) with some minor RDD specific setting. You can configure Eclipse to use it automatically at *Eclipse &gt; Preferences &gt; Java &gt; Code Style &gt; Formatter*. Just load the [RDD Eclipse Java Google Style](https://raw.githubusercontent.com/subugoe/rdd-technical-reference/master/styles/rdd-eclipse-java-google-style.xml) in the formatter preferences and use it in your RDD projects.
 
-- **JavaScript**: For JS we use the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript). @TODO uv: Tutorials verlinken!
+- **JavaScript**: [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript). @TODO uv: Tutorials verlinken!
 
-- **HTML/CSS**: For HTML/CSS we agreed upon the [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html).
+- **HTML/CSS**: [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html).
 
-- **XQuery**: We use the [xqdoc style guide](http://xqdoc.org/xquery-style.pdf) with the following addenda:
-
+- **XQuery**: [xqdoc style guide](http://xqdoc.org/xquery-style.pdf) with the following addenda:
     - use double quotes instead of single quotes (for easy escaping)
-    - use four spaces for a TAB (because eXide makes it so)
+    - use four spaces for a TAB
 
 - **XSLT**: Since there is no official style guide for XSLT, we decided to write
 [our own](https://github.com/subugoe/rdd-technical-reference/tree/master/style-guides/FE-XSLT.pdf), resulting from common best practices and own experiences within
@@ -59,17 +55,16 @@ the department.
     - declaration of variables should start with a **?** (and not with a **$**).
     - opening parenthesis **{** should be at the end of the line. Closing parenthesis in a separate line.
 
-'''
+```
 SELECT * WHERE {
     ?s ?p ?o .
 } LIMIT 10
-'''
-
+```
     - group concatenations in SELECT command should be in seperate lines.
 
-'''
+```
     **TODO** @Max: Provide example
-'''
+```
 
 
 ## Is your software fully documented?
@@ -84,9 +79,9 @@ SELECT * WHERE {
 
 - documentation and variable language is American English
 
-- should be as code-near as possible
+- should be as close to the code as possible
 
-- every code repo must have
+- every code repository must provide
 
     - a README.md file that contains
         - link to original repository
@@ -100,21 +95,22 @@ SELECT * WHERE {
         - known issues
         - badges to ci status
 
-    A good example can be found [here](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2).
+    A good example for a README structure can be found [here](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2).
     - a LICENCE file
 
 ### Developer documentation
 
-#### Architecture of the software
+#### Software architecture
 
-Each software project should be documented using an architecture diagram that helps understanding its basic functionality (using tools to generate diagrams such as UML class diagrams seems not to be possible in every case).
+Each software project should be documented by using an architecture diagram that helps understanding its basic functionality. Using tools to generate diagrams such as UML class diagrams might not to be possible or useful in every case.
 
 Examples:
 
 - [Generating call graphs in eXist-db](https://gitlab.gwdg.de/SADE/SADE/tree/develop/modules/callgraph)
 - @TODO fu: Looks for JAVA UML things (crud?)
 
-Call diagrams can be useful to follow code and service calls and should be existing for every API method.
+Call diagrams/graphs can be useful to help comprehending code and service calls. They should exist for every API method.
+
 
 #### API documentation
 
@@ -126,11 +122,13 @@ Call diagrams can be useful to follow code and service calls and should be exist
 
 - meet and write documentation together regularly (documentation sprint)?
 
+
 ### Admin Documentation
 
 - how to install the software, how to run and/or restart it, how to test the installation, ...
 
 - server documentation
+
 
 ### User Documentation
 
@@ -144,39 +142,33 @@ Call diagrams can be useful to follow code and service calls and should be exist
 - screencasts
 
 
-## Which version control do you use? You do use version control, do you?
+## Which version control do you use? You do use version control, don't you?
 
-We are using GIT in RDD! Nothing else! How it works, please see <https://git-scm.com/doc>.
+We are using [GIT](https://git-scm.com/doc) in RDD! Nothing else!
 
-We recommend to use Gitflow Workflow: <https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow>, Cheat Sheet: <https://danielkummer.github.io/git-flow-cheatsheet>), if possible on server side: use protection of the develop and master branches.
+We recommend to use the [gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) [Workflow](https://danielkummer.github.io/git-flow-cheatsheet), especially when several developers contribute to your software. When using gitflow you should protect the develop and master branches on your server to avoid pushing to them by accident.
 
-Automatically closing issues via commit message depends on the Git repository server. Issues can also be referenced across repositories (cf. [link](https://help.github.com/articles/autolinked-references-and-urls/#commit-shas)).
+In RDD we use several Git repository servers:
 
-Which repo you are using depends on:
+- [projects.gwdg.de]()
+- [GitLab](http://www.gitlab.gwdg.de)
+- [GitHub](http://www.github.com)
 
-- the project
-- existing code
-- using Gitlab Runners
-- ...
+Which one is most suitable for your project depends on several factors including the project itself, existing code, which CI/CD solutions you want to use, ... Don't hesitate to consult the developer team in case you have questions!
 
-We use the following at the moment in RDD:
-
-- Projects (GWDG) --> <https://projects.gwdg.de>
-- Gitlab (GWDG) --> <https://gitlab.gwdg.de>
-- github.org --> <https://github.com/subugoe>
+Closing issues automatically via commit message(s) is recommended; The exact way to do it depends on your Git repository server. Issues can also be referenced across repositories (cf. [link](https://help.github.com/articles/autolinked-references-and-urls/#commit-shas)).
 
 We have got an RDD team on Github: <https://github.com/orgs/subugoe/teams/fe>
-
 
 Consider mirroring of repos for project visibility (e.g. mirror Gitlab/Projects code to Github?)
 
 
 ## Are you tracking your bugs properly?
 
-A bug tracking system is obligatory! Please use the respective bug tracking system of your repo and/or project management solution (please see chapter version control)!
+A bug tracking system is mandatory! Please use the respective bug tracking system of your repo and/or project management solution.
 
 
-## What is your test coverage?
+## Are you testing your code?
 
 We aim to have a test coverage of **100%** (except for getter and setter methods).
 Whether you achive this by Test Driven Development (TDD) or not is specific to
@@ -211,7 +203,7 @@ Examples for different programming languages are:
 
 # Licencing
 
-- clarify software licence before programming
+- clarify software licence before programming with your PI
 
 - add licence to code header
 
@@ -236,3 +228,5 @@ Examples for different programming languages are:
 - Software Quality Guidelines: <https://github.com/CLARIAH/software-quality-guidelines>
 
 - Software Testing Levels: <http://softwaretestingfundamentals.com/software-testing-levels>
+
+# Glossary
