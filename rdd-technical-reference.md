@@ -15,8 +15,8 @@ Our goal is to establish better software quality by following standards the deve
 
 
 
-# Status
 
+# Status
 This document is a living document and will be extended as soon as the Software Quality Working Group has agreed upon a new standard for software projects in RDD.
 
 
@@ -88,7 +88,7 @@ SELECT * WHERE {
 
 - every code repo must have
 
-    - a README.md file that contains @TODO mw: provide link to example
+    - a README.md file that contains
         - link to original repository
         - short introduction
         - link to demo instance
@@ -99,6 +99,8 @@ SELECT * WHERE {
         - link to bugtracker/project managemenmt system
         - known issues
         - badges to ci status
+
+    A good example can be found [here](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2).
     - a LICENCE file
 
 ### Developer documentation
@@ -108,8 +110,9 @@ SELECT * WHERE {
 Each software project should be documented using an architecture diagram that helps understanding its basic functionality (using tools to generate diagrams such as UML class diagrams seems not to be possible in every case).
 
 Examples:
-    - @TODO mw: call graph
-    - @TODO fu: Looks for JAVA UML things (crud?)
+
+- [Generating call graphs in eXist-db](https://gitlab.gwdg.de/SADE/SADE/tree/develop/modules/callgraph)
+- @TODO fu: Looks for JAVA UML things (crud?)
 
 Call diagrams can be useful to follow code and service calls and should be existing for every API method.
 
@@ -147,7 +150,7 @@ We are using GIT in RDD! Nothing else! How it works, please see <https://git-scm
 
 We recommend to use Gitflow Workflow: <https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow>, Cheat Sheet: <https://danielkummer.github.io/git-flow-cheatsheet>), if possible on server side: use protection of the develop and master branches.
 
-Automatically closing issues via commit message depends on the Git repository server. @TODO mw: References to other issues, etcpp.
+Automatically closing issues via commit message depends on the Git repository server. Issues can also be referenced across repositories (cf. [link](https://help.github.com/articles/autolinked-references-and-urls/#commit-shas)).
 
 Which repo you are using depends on:
 
