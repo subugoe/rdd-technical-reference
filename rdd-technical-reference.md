@@ -68,7 +68,7 @@ SELECT * WHERE {
     - group concatenations in SELECT command should be in seperate lines.
 
 '''
-    **TODO** @Max: Provide example
+    @TODO @Max: Provide example
 '''
 
 
@@ -150,6 +150,8 @@ We are using GIT in RDD! Nothing else! How it works, please see <https://git-scm
 
 We recommend to use Gitflow Workflow: <https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow>, Cheat Sheet: <https://danielkummer.github.io/git-flow-cheatsheet>), if possible on server side: use protection of the develop and master branches.
 
+A github workflow used in DARIAH-DE and related services is described in the DARIAH-DE Wiki: <https://wiki.de.dariah.eu/display/DARIAH3/DARIAH-DE+Release+Management#DARIAH-DEReleaseManagement-Beispielmitdevelop-undmaster-Branch(Gitflow)>
+
 Automatically closing issues via commit message depends on the Git repository server. Issues can also be referenced across repositories (cf. [link](https://help.github.com/articles/autolinked-references-and-urls/#commit-shas)).
 
 Which repo you are using depends on:
@@ -195,14 +197,36 @@ Examples for different programming languages are:
 
 - @TODO: Code building (such as Jenkins, Gitlab Runner)
 
+    - build tools we are using at the moment
+        - Maven (Java)
+        - Ant (eXist)
+        - NPM, etc. (JavaScript) @TODO: more?
+        - PIP (Python)
+        - ...
+
+    - build tools we want to evaluate
+        - gradle
+
 - @TODO: Provide complete examples for Jenkins and GitLab runner.
+
+    - Code building
+    - Testing
+    - Code analyzer (Sonar)
+    - Packaging (JAR, WAR, DEB, XAR)
+    - Distribution (Nexus, APTLY repo, eXist repo)
+    - Release Management (@TODO: where to put this? gitflow?)
+
+
+## Deployment and maintenance
+
+- @TODO: Puppet
 
 - @TDOO: Monitoring (such as Icinga, Metrics)
 
 
 # Code quality level for RDD
 
-- Evaluate Software maturity Levels from CESSDA: **TODO**: @mw
+- Evaluate Software maturity levels from CESSDA: @TODO @mw
 
 - @TODO: Code reviewing, evaluate quality level
 
@@ -229,7 +253,7 @@ Examples for different programming languages are:
 
 - DHTech -- An international grass-roots community of Digital Humanities software engineers: <https://dh-tech.github.io>
 
-- The Software Sustainability Institute, Guidelines and publicartions: <https://www.software.ac.uk>
+- The Software Sustainability Institute, Guidelines and Publications: <https://www.software.ac.uk>
 
 - The Joel Test: 12 Steps to Better Code: <https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code>
 
