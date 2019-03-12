@@ -221,7 +221,7 @@ Examples for different programming languages are:
 
 - @TODO: Puppet
 
-- @TDOO: Monitoring (such as Icinga, Metrics)
+- @TODO: Monitoring (such as Icinga, Metrics)
 
 
 # Code quality level for RDD
