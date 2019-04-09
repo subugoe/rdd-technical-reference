@@ -126,6 +126,8 @@ Call diagrams can be useful to follow code and service calls and should be exist
 
 - meet and write documentation together regularly (documentation sprint)?
 
+- document REST-APIs using [openAPI](https://github.com/OAI/OpenAPI-Specification) if possible. OpenAPI docs should be located at /doc/api on servers
+
 ### Admin Documentation
 
 - how to install the software, how to run and/or restart it, how to test the installation, ...
