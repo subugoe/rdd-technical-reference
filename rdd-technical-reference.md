@@ -122,9 +122,9 @@ Call diagrams can be useful to follow code and service calls and should be exist
 
 - example for Java: <https://lab.sub.uni-goettingen.de/self-updating-docs.html>
 
-- links to callers? who is calling this method, and when?
+- TODO discuss: links to callers? who is calling this method, and when?
 
-- meet and write documentation together regularly (documentation sprint)?
+- TODO discuss: meet and write documentation together regularly (documentation sprint)?
 
 - document REST-APIs using [openAPI](https://github.com/OAI/OpenAPI-Specification) if possible. OpenAPI docs should be located at /doc/api on servers
 
