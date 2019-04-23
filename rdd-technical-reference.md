@@ -112,21 +112,21 @@ Each software project should be documented using an architecture diagram that he
 Examples:
 
 - [Generating call graphs in eXist-db](https://gitlab.gwdg.de/SADE/SADE/tree/develop/modules/callgraph)
-- @TODO fu: Looks for JAVA UML things (crud?)
+- @TODO @fugu: Looks for JAVA UML things (crud?)
 
 Call diagrams can be useful to follow code and service calls and should be existing for every API method.
 
 #### API documentation
 
-- used parameters, author and since annotations
+- Used parameters, author and since annotations
 
-- example for Java: <https://lab.sub.uni-goettingen.de/self-updating-docs.html>
+- Example for Java: <https://lab.sub.uni-goettingen.de/self-updating-docs.html>
 
-- TODO discuss: links to callers? who is calling this method, and when?
+- Links to callers must not be listed in the documentation, because this info will be deprecated soon. Strongly recommended is using call stacks of tools like Eclipse (Java) and/or Call Graph Module (SADE).
 
-- TODO discuss: meet and write documentation together regularly (documentation sprint)?
+- We do meet and write documentation together regularly (documentation sprint) every friday from 1 PM in the RDD meeting room. WE NEED COOKIES!
 
-- document REST-APIs using [openAPI](https://github.com/OAI/OpenAPI-Specification) if possible. OpenAPI docs should be located at /doc/api on servers
+- Document REST-APIs using [openAPI](https://github.com/OAI/OpenAPI-Specification) if possible. OpenAPI docs should be located at /doc/api on servers.
 
 ### Admin Documentation
 
@@ -262,3 +262,5 @@ Examples for different programming languages are:
 - Software Quality Guidelines: <https://github.com/CLARIAH/software-quality-guidelines>
 
 - Software Testing Levels: <http://softwaretestingfundamentals.com/software-testing-levels>
+
+- Netherlands eScience Center Guide <https://guide.esciencecenter.nl>
