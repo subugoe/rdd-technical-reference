@@ -212,26 +212,28 @@ Examples for different programming languages are:
 - **XQuery**: <https://gist.github.com/joewiz/fa32be80749a69fcb8da>
 
 
-## Code building and continuous integration
+## Building code and continuous integration
 
-### Code building
+### Building code
 
 The reason for using a build tool is to be able to build and/or test a code project with one command (after checking out). Another reason is to include dependency management.
 
-Build tools we are using at the moment
+##### Build tools we are using at the moment
+* **bash scripting**: (BdN Print, Fontane Print)
+* **eXist**: Ant (SADE)
+* **Java**: Maven (TextGrid)
+* **JavaScript**:
+  * bower (DARIAH-DE GeoBrowser, tgForms)
+  * cake (tgForms)
+  * NPM (DARIAH-DE Publikator, tgForms)
+  * rake (DARIAH-DE GeoBrowser)
+* **Phython**:
+  * make (Sphinx documentation)
+  * PIP (DiscussData)
+* **Ruby**: bundler (DARIAH status page)
 
-    - Maven (Java)
-    - Ant (eXist)
-    - NPM (publikator, tg-Forms), bower (GeoBrowser, tg-Forms), cake (tg-Forms) (JavaScript)
-    - PIP (Python)
-    - bundle (DARIAH status page)
-    - rake (GeoBrowser)
-    - make files (Documention in Sphinx)
-    - bash (bdn- und fontane-print, tg-Forms)
-
-Build tools we want to evaluate
-
-    - gradle
+##### Build tools we want to evaluate
+* gradle
 
 ### Continuous integration
 
@@ -239,13 +241,12 @@ We want to use CI as soon as possible in new projects.
 
 The workflows we are using currently in Jenkins and Gitlab Runner are:
 
-    - Code building
-    - Testing
-    - Code analyzer (Sonar)
-    - Packaging (JAR, WAR, DEB, XAR)
-    - Distribution (Nexus, APTLY repo, eXist repo)
-    - Release Management (@TODO: where to put this? gitflow?)
-
+    * Code building
+    * Testing
+    * Code analyzer (Sonar)
+    * Packaging (JAR, WAR, DEB, XAR)
+    * Distribution (Nexus, APTLY repo, eXist repo)
+    * Release Management (@TODO: where to put this? gitflow?)
 
 ## Deployment and maintenance
 
