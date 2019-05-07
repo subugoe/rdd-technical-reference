@@ -67,9 +67,25 @@ SELECT * WHERE {
 
     - group concatenations in SELECT command should be in seperate lines.
 
-'''
-    @TODO @Max: Provide example
-'''
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+SELECT DISTINCT 
+(group_concat( distinct ?conceptName;separator="; ") as ?conceptNames)
+(group_concat( distinct ?conceptUri;separator="; ") as ?conceptUris)
+(group_concat( distinct ?next;separator="; ") as ?nexts)
+(group_concat( distinct ?def;separator="; ") as ?defs)
+  WHERE {       
+	<' + uri + '> skos:narrower ?conceptUri.
+	?conceptUri skos:prefLabel ?conceptName.
+  OPTIONAL{?conceptUri skos:narrower ?next.}
+  OPTIONAL { ?conceptUri skos:definition ?def.}
+	FILTER(LANG(?conceptName) = "" || LANGMATCHES(LANG(?conceptName), "en"))
+}GROUP BY ?conceptUri
+```
 
 
 ## Is your software fully documented?
