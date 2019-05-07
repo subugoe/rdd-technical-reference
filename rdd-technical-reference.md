@@ -216,7 +216,7 @@ Examples for different programming languages are:
 
 ### Code building
 
-The reason for using a build tool is to be able to build and/or test a code project with one command (after checking out). Another reason  is to include dependency management.
+The reason for using a build tool is to be able to build and/or test a code project with one command (after checking out). Another reason is to include dependency management.
 
 Build tools we are using at the moment
 
@@ -234,6 +234,10 @@ Build tools we want to evaluate
     - gradle
 
 ### Continuous integration
+
+We want to use CI as soon as possible in new projects.
+
+The workflows we are using currently in Jenkins and Gitlab Runner are:
 
     - Code building
     - Testing
