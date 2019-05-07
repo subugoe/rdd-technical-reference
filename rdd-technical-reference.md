@@ -219,16 +219,17 @@ Examples for different programming languages are:
     - build tools we are using at the moment
         - Maven (Java)
         - Ant (eXist)
-        - NPM, etc. (JavaScript) @TODO: more?
+        - NPM (publikator, tg-Forms), bower (GeoBrowser, tg-Forms), cake (tg-Forms) (JavaScript) 
         - PIP (Python)
-        - ...
+        - bundle (DARIAH status page)
+        - rake (GeoBrowser)
+        - make files (Documention in Sphinx)
+        - bash (bdn- und fontane-print, tg-Forms)
 
     - build tools we want to evaluate
-        - gradle
-
-- @TODO: Provide complete examples for Jenkins and GitLab runner.
-
-    - Code building
+        - gradle         
+### CI
+    - Code building 
     - Testing
     - Code analyzer (Sonar)
     - Packaging (JAR, WAR, DEB, XAR)
