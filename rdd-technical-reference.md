@@ -1,30 +1,18 @@
 ---
-title: 'SUB RDD Technical Reference'
+# SUB RDD Technical Reference#
 
-author:
-- Software Quality Working Group
-...
+**Author**: Software Quality Working Group
 
-
-
-# Purpose
-
+**Purpose**:
 This guideline should help you getting started a new software development project (or improving an existing one!) in the Research and Development Department of the Göttingen State and University Library.
 
 Our goal is to establish better software quality by following standards the developer team has mutually agreed upon. Roughly basing on the [DARIAH Technical Reference](https://dariah-eric.github.io/technical-reference/), these standards are discussed, worked out, and decided in the Software Quality Working Group, which meets biweekly on Tuesdays at 12:30-13:30. However, they aren't cast in stone, so in case you have a good idea for a better standard, feel free to contribute!
 
-
-
-
-# Status
+**Status**:
 This document is a living document and will be extended as soon as the Software Quality Working Group has agreed upon a new standard for software projects in RDD.
 
-
-
-# Guidelines
-
-
-## Do you stick to our code style guides?
+## Guidelines
+**Do you stick to our code style guides?**
 
 ### General
 
@@ -241,12 +229,12 @@ We want to use CI as soon as possible in new projects.
 
 The workflows we are using currently in Jenkins and Gitlab Runner are:
 
-    * Code building
-    * Testing
-    * Code analyzer (Sonar)
-    * Packaging (JAR, WAR, DEB, XAR)
-    * Distribution (Nexus, APTLY repo, eXist repo)
-    * Release Management (@TODO: where to put this? gitflow?)
+* Code building
+* Testing
+* Code analyzer (Sonar)
+* Packaging (JAR, WAR, DEB, XAR)
+* Distribution (Nexus, APTLY repo, eXist repo)
+* Release Management (@TODO: where to put this? gitflow?)
 
 ## Deployment and maintenance
 
