@@ -59,13 +59,15 @@ the department.
     - declaration of variables should start with a **?** (and not with a **$**).
     - opening parenthesis **{** should be at the end of the line. Closing parenthesis in a separate line.
 
-'''
+```
 SELECT * WHERE {
     ?s ?p ?o .
 } LIMIT 10
-'''
+```
 
+'''
     - group concatenations in SELECT command should be in seperate lines.
+'''
 
 ```
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
