@@ -41,7 +41,7 @@ For the more prominent programming languages we have formatting and general styl
 
 - **Java**: The Java style guide can be found [here](./styles/rdd-eclipse-java-google-style.xml). It's based on the [Google style guide for Java](https://github.com/google/styleguide) with some minor RDD specific setting. You can configure Eclipse to use it automatically at *Eclipse &gt; Preferences &gt; Java &gt; Code Style &gt; Formatter*. Just load the [RDD Eclipse Java Google Style](https://raw.githubusercontent.com/subugoe/rdd-technical-reference/master/styles/rdd-eclipse-java-google-style.xml) in the formatter preferences and use it in your RDD projects.
 
-- **JavaScript**: For JS we use the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript). 
+- **JavaScript**: For JS we use the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript).
 
 - **HTML/CSS**: For HTML/CSS we agreed upon the [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html).
 
@@ -75,7 +75,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dct: <http://purl.org/dc/terms/>
 
-SELECT DISTINCT 
+SELECT DISTINCT
 (group_concat( distinct ?conceptName;separator="; ") as ?conceptNames)
 (group_concat( distinct ?conceptUri;separator="; ") as ?conceptUris)
 (group_concat( distinct ?next;separator="; ") as ?nexts)
@@ -214,22 +214,28 @@ Examples for different programming languages are:
 
 ## Code building and continuous integration
 
-- @TODO: Code building (such as Jenkins, Gitlab Runner)
+### Code building
 
-    - build tools we are using at the moment
-        - Maven (Java)
-        - Ant (eXist)
-        - NPM (publikator, tg-Forms), bower (GeoBrowser, tg-Forms), cake (tg-Forms) (JavaScript) 
-        - PIP (Python)
-        - bundle (DARIAH status page)
-        - rake (GeoBrowser)
-        - make files (Documention in Sphinx)
-        - bash (bdn- und fontane-print, tg-Forms)
+The reason for using a build tool is to be able to build and/or test a code project with one command (after checking out). Another reason  is to include dependency management.
 
-    - build tools we want to evaluate
-        - gradle         
-### CI
-    - Code building 
+Build tools we are using at the moment
+
+    - Maven (Java)
+    - Ant (eXist)
+    - NPM (publikator, tg-Forms), bower (GeoBrowser, tg-Forms), cake (tg-Forms) (JavaScript)
+    - PIP (Python)
+    - bundle (DARIAH status page)
+    - rake (GeoBrowser)
+    - make files (Documention in Sphinx)
+    - bash (bdn- und fontane-print, tg-Forms)
+
+Build tools we want to evaluate
+
+    - gradle
+
+### Continuous integration
+
+    - Code building
     - Testing
     - Code analyzer (Sonar)
     - Packaging (JAR, WAR, DEB, XAR)
