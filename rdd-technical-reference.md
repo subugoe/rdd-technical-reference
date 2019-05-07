@@ -1,5 +1,4 @@
----
-# SUB RDD Technical Reference#
+# SUB RDD Technical Reference
 
 **Author**: Software Quality Working Group
 
