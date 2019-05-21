@@ -235,6 +235,77 @@ The workflows we are using currently in Jenkins and Gitlab Runner are:
 * Distribution (Nexus, APTLY repo, eXist repo)
 * Release Management (@TODO: where to put this? gitflow?)
 
+#### Sample configuration of the GitLab Runner
+
+The following example illustrates how the GitLab Runner is used in SADE.
+The fully documented version of this file can be viewed [here](https://gitlab.gwdg.de/SADE/SADE/blob/develop/.gitlab-ci.yml).
+
+```
+image: docker.gitlab.gwdg.de/fontane-notizbuecher/build:latest
+
+stages:
+  - build
+  - test
+  - deploy
+
+build-develop:
+  except:
+      - master
+      - tags
+  stage: build
+  script:
+    - ant test
+  artifacts:
+    paths:
+      - build/*.xar
+      - test/
+
+build-master:
+  only:
+      - master
+  stage: build
+  script:
+    - cp master.build.properties local.build.properties
+    - ant test
+  artifacts:
+    paths:
+      - build/*.xar
+      - test/
+
+installation:
+  except:
+      - tags
+  stage: test
+  script:
+    - bash test/eXist-db-*/bin/startup.sh | tee output.log &
+    # wait for eXist to have started
+    - while [ $(curl --head --silent http://localhost:8080 | grep -c "200 OK") == 0 ]; do sleep 2s; done
+    # shutdown eXist
+    - bash test/eXist-db-*/bin/shutdown.sh
+    - ls -al /tmp; mv /tmp/tests-* . || true
+  artifacts:
+    paths:
+      - output.log
+      - test/tests-*.xml
+      - test/eXist-db-*/webapp/WEB-INF/logs/expath-repo.log
+    # this enables us to get information like test coverage.
+    reports:
+        junit: test/tests-*.xml
+
+
+upload:
+  only:
+      - master
+      - develop
+  except:
+      - tags
+  stage: deploy
+  script:
+    - FILENAME=$(ls build/*.xar)
+    - curl -u ci:${EXIST_UPLOAD_PW} -X POST -F file=@${FILENAME} https://ci.de.dariah.eu/exist-upload
+
+```
+
 ## Deployment and maintenance
 
 - @TODO: Puppet
