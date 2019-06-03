@@ -208,6 +208,7 @@ Examples for different programming languages are:
 The reason for using a build tool is to be able to build and/or test a code project with one command (after checking out). Another reason is to include dependency management.
 
 ##### Build tools we are using at the moment
+
 * **bash scripting**: (BdN Print, Fontane Print)
 * **eXist**: Ant (SADE)
 * **Java**: Maven (TextGrid)
@@ -222,6 +223,7 @@ The reason for using a build tool is to be able to build and/or test a code proj
 * **Ruby**: bundler (DARIAH status page)
 
 ##### Build tools we want to evaluate
+
 * gradle
 
 ### Continuous integration
@@ -241,6 +243,7 @@ The workflows we are using currently in Jenkins and Gitlab Runner are:
 
 The following example illustrates how the GitLab Runner is used in SADE.
 The fully documented version of this file can be viewed [here](https://gitlab.gwdg.de/SADE/SADE/blob/develop/.gitlab-ci.yml).
+
 
 ```
 image: docker.gitlab.gwdg.de/fontane-notizbuecher/build:latest
@@ -305,8 +308,69 @@ upload:
   script:
     - FILENAME=$(ls build/*.xar)
     - curl -u ci:${EXIST_UPLOAD_PW} -X POST -F file=@${FILENAME} https://ci.de.dariah.eu/exist-upload
+```
+
+
+#### Sample configuration of the Jenkins CI (Multibranch Pipelines)
+
+- On commit and push to the <https://projects.gwdg.de> gitolite repo (such as <https://projects.gwdg.de/projects/tg-crud/repository>) Jenkins on ci.de.dariah.eu <https://ci.de.dariah.eu/jenkins> is notified (see projects' gitolite configuration)
+
+- Jenkins then is doing a checkout and build of configured branches (see Jenkins' project's multibranch pipeline configuration such as <https://ci.de.dariah.eu/jenkins/job/DARIAH-DE-CRUD-Services>. Here comes THE CRUD Jenkinsfile, as it is used for other projects in a very similar way:
+
 
 ```
+#!/usr/bin/env groovy
+
+node {
+  def mvnHome
+
+  stage('Preparation') {
+    mvnHome = tool 'Maven 3.5.0'
+    checkout scm
+  }
+
+  stage('Build') {
+    // We are deploying all JARs and WARs build here, SNAPSHOTs and RELEASEs!
+    sh "cd service && '${mvnHome}/bin/mvn' -U clean verify deploy -Pdhrep.deb"
+  }
+
+  stage('Publish') {
+    def pom = readMavenPom file: 'service/pom.xml'
+    def pVersion = pom.version
+    def snapshot = pVersion.contains("SNAPSHOT")
+    def tg = pVersion.contains("TG")
+    def dh = pVersion.contains("DH")
+
+    if (snapshot) {
+      if (tg) {
+        doDebSnapshot('tgcrud-webapp', 'service/tgcrud-webapp/target', pVersion)
+        doDebSnapshot('tgcrud-webapp-public', 'service/tgcrud-webapp-public/target', pVersion)
+      }
+      if (dh) {
+        doDebSnapshot('dhcrud-webapp', 'service/dhcrud-webapp/target', pVersion)
+        doDebSnapshot('dhcrud-webapp-public', 'service/dhcrud-webapp-public/target', pVersion)
+      }
+    }
+    else {
+      if (tg) {
+        doDebRelease('tgcrud-webapp', 'service/tgcrud-webapp/target', pVersion)
+        doDebRelease('tgcrud-webapp-public', 'service/tgcrud-webapp-public/target', pVersion)
+      }
+      if (dh) {
+        doDebRelease('dhcrud-webapp', 'service/dhcrud-webapp/target', pVersion)
+        doDebRelease('dhcrud-webapp-public', 'service/dhcrud-webapp-public/target', pVersion)
+      }
+    }
+  }
+}
+```
+
+- Stage *Preparation*: Prepare things
+
+- Stage *Build*: Build, JAR, WAR, and DEB packages from source code, deploy JAR and WAR packages to the Nexus repo (at the moment <https://ci.de.dariah.eu/nexus> --> in the near future <https://nexus.gwdg.de>). Jenkins is configured to deploy JARs and WARs via Maven and a Nexus deploy-account.
+
+- Stage *Publish*: Publish DEB packages to the DARIAH-DE Aptly Repo <https://ci.de.dariah.eu/aptly>. Jenkins is using a shared library of scripts and publishing is devided into four conditionals: TG version, DH version, SNAPSHOT version, or RELEASE version due to given version suffixes!
+
 
 ## Deployment and maintenance
 
