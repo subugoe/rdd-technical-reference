@@ -237,7 +237,7 @@ The workflows we are using currently in Jenkins and Gitlab Runner are:
 * Code analyzer (Sonar)
 * Packaging (JAR, WAR, DEB, XAR)
 * Distribution (Nexus, APTLY repo, eXist repo)
-* Release Management (@TODO: where to put this? gitflow?)
+* Release Management (via GitLab Environments and gitflow)
 
 #### Sample configuration of the GitLab Runner
 
@@ -374,28 +374,44 @@ node {
 
 ## Deployment and maintenance
 
-- @TODO: Puppet
+### Puppet
 
-- @TODO: Monitoring (such as Icinga, Metrics)
+### Monitoring
 
+### Release Management
 
 # Code quality level for RDD
 
 - Evaluate Software maturity levels from CESSDA: @TODO @mw
 
-- @TODO: Code reviewing, evaluate quality level
+## Code review
+We want to ensure code review for all major commits, in gitflow for everything
+that is subject to be merged into `develop`.
 
-- @TODO: Wissenschaftliche Standards für wissenschaftliche Software?!
+Projects with more than one developer in the team, it is preferred to have code
+reviewer within the team, in other cases your friendly rdd developer team is
+on your side.
+
+### Proof of concept
+When preparing a proof of concept that is always labeled `poc`, a code review is
+not necessary.
 
 
-# Licencing
+# Licensing
 
 - clarify software licence before programming
 
 - add licence to code header
 
-- @TODO: depends on used software libraries, project and/or funder
+Best practice is to maintain a file listing all third-party packages that are
+part of the software. This list should hold the following metadata and SHOULD be
+prepared like the table below, always in alphanumeric order.
 
+| name | license | origin |
+|---|---|---|---|
+| foo | barware | github.com/foo/bar |
+
+May be the `license-maven` plugin will help you.
 
 # Retirement of software
 
