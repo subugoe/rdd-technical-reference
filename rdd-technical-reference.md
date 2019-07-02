@@ -188,9 +188,7 @@ A bug tracking system is obligatory! Please use the respective bug tracking syst
 
 ## What is your test coverage?
 
-We aim to have a test coverage of **100%** (except for getter and setter methods).
-Whether you achive this by Test Driven Development (TDD) or not is specific to
-your preferred way to work.
+We aim to have a test coverage of **100%** (except for getter and setter methods). This is understood on a component level, which means that every method should have at least one test. Whether you achive this by Test Driven Development (TDD) or not is specific to your preferred way to work.
 
 Please keep in mind not only to write a test for each of your functions but also
 to consider all possible outcomes. It is e.g. not sufficient to test if a function
