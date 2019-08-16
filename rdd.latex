@@ -9,7 +9,7 @@
 
 \title{$title$}
 
-\date{\today \vspace{5cm} \small{\texttt{<https://github.com/subugoe/rdd-technical-reference>}}}
+\date{\today \\ \vspace{1cm} \small{\texttt{<https://github.com/subugoe/rdd-technical-reference>}}}
 
 \begin{document}
 
