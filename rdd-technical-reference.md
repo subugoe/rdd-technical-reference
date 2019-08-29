@@ -1,33 +1,32 @@
----
-title:  'SUB RDD Technical Reference'
-...
+# SUB RDD Technical Reference
 
+**Author**: Software Quality Working Group
 
-# About this Document
-
-**Author**: Software Quality Working Group\
-\
 **Purpose**:
 This guideline should help you getting started a new software development project (or improving an existing one!) in the Research and Development Department of the Göttingen State and University Library.
 
-Our goal is to establish better software quality by following standards the developer team has mutually agreed upon. Roughly basing on the [EURISE Network Technical Reference](https://eurise-network.github.io/), these standards are discussed, worked out, and decided in the Software Quality Working Group, which meets biweekly on Tuesdays at 13:00-14:00. However, they aren't cast in stone, so in case you have a good idea for a better standard, feel free to contribute!\
-\
+Our goal is to establish better software quality by following standards the developer team has mutually agreed upon. Roughly basing on the [DARIAH Technical Reference](https://dariah-eric.github.io/technical-reference/), these standards are discussed, worked out, and decided in the Software Quality Working Group, which meets biweekly on Tuesdays at 12:30-13:30. However, they aren't cast in stone, so in case you have a good idea for a better standard, feel free to contribute!
+
 **Status**:
 This document is a living document and will be extended as soon as the Software Quality Working Group has agreed upon a new standard for software projects in RDD.
-TODOs and addenda of this document are maintained [here](https://github.com/subugoe/rdd-technical-reference/issues/).
 
-# Style Guides
+## Guidelines
+**Do you stick to our code style guides?**
 
-## General
+### General
 
-The basic definitions are given by our [EditorConfig](http://editorconfig.org/) file, `.editorconfig`,
-i.e. Unix line breaks and 2 space indentation.
+The basic definitions are given by our [EditorConfig](http://editorconfig.org/),
+i.e. unix line breaks and 2 space indentation.
 
-## Specific for Programming Languages
+Unfortunately, not all editors support [EditorConfig](http://editorconfig.org/).
+In case you use **eXide**, the IDE that comes with [exist-db](http://exist-db.org/),
+you can set 2 space indentation as default by editing `/db/apps/eXide/src/preferences.js`.
+
+### Specific for programming languagues
 
 For the more prominent programming languages we have formatting and general style guides we ask you to follow:
 
-- **Java**: The Java style guide can be found [here](./styles/rdd-eclipse-java-google-style.xml). It's based on the [Google style guide for Java](https://github.com/google/styleguide) with some minor RDD specific settings. You can configure Eclipse to use it automatically at *Eclipse &gt; Preferences &gt; Java &gt; Code Style &gt; Formatter*. Just load the [RDD Eclipse Java Google Style](https://raw.githubusercontent.com/subugoe/rdd-technical-reference/master/styles/rdd-eclipse-java-google-style.xml) in the formatter preferences and use it in your RDD projects.
+- **Java**: The Java style guide can be found [here](./styles/rdd-eclipse-java-google-style.xml). It's based on the [Google style guide for Java](https://github.com/google/styleguide) with some minor RDD specific setting. You can configure Eclipse to use it automatically at *Eclipse &gt; Preferences &gt; Java &gt; Code Style &gt; Formatter*. Just load the [RDD Eclipse Java Google Style](https://raw.githubusercontent.com/subugoe/rdd-technical-reference/master/styles/rdd-eclipse-java-google-style.xml) in the formatter preferences and use it in your RDD projects.
 
 - **JavaScript**: For JS we use the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript).
 
@@ -36,18 +35,18 @@ For the more prominent programming languages we have formatting and general styl
 - **XQuery**: We use the [xqdoc style guide](http://xqdoc.org/xquery-style.pdf) with the following addenda:
 
     - use double quotes instead of single quotes (for easy escaping)
-    - use four spaces for a TAB (because eXide switching the preferences in eXide's setting isn't permanent)
+    - use four spaces for a TAB (because eXide makes it so)
 
 - **XSLT**: Since there is no official style guide for XSLT, we decided to write
 [our own](https://github.com/subugoe/rdd-technical-reference/tree/master/style-guides/FE-XSLT.pdf), resulting from common best practices and own experiences within
 the department.
 
-- **Python**: For Python [PEP 8](https://www.python.org/dev/peps/pep-0008/) should be used, Django has a style guide based on PEP-8 with some exceptions: [Django-Styleguide](https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/coding-style/). There are linters and tools like [flake-8](https://pypi.org/project/flake8/) and [pep-8](https://pypi.org/project/pep8/) available as support.
+- **Python**: For Python [PEP 8](https://www.python.org/dev/peps/pep-0008/) should be used, Django has a styleguide based on PEP-8 with some exceptions: [Django-Styleguide](https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/coding-style/). There are linters and tools like [flake-8](https://pypi.org/project/flake8/) and [pep-8](https://pypi.org/project/pep8/) availabe to support.
 
-- **SPARQL**: For SPARQL there is not really any official style guide and there is no possibility to simply include any code style automatically using a code style file. We just collect some advice how to format and use SPARQL code.
+- **SPARQL**: For SPARQL there is not really any official style guide and there is no possibility to simply include any code style automatically using a code style file. We just collect some advices how to format and use SPARQL code.
 
     - declaration of variables should start with a **?** (and not with a **$**).
-    - opening parenthesis **{** should be at the end of the line. Closing parenthesis in a separate line. Example:
+    - opening parenthesis **{** should be at the end of the line. Closing parenthesis in a separate line.
 
 ```
 SELECT * WHERE {
@@ -80,15 +79,11 @@ SELECT DISTINCT
 ```
 
 
-# Is Your Software Fully Documented?
+## Is your software fully documented?
 
-## Docs Sprints
+### General issues
 
-To ensure the best documentation of our code we can we meet on a weekly base for a code sprint to document everything we have coded throughout the week and haven't been able to document properly yet. The meeting takes place in the meeting room at 1pm. Cookies may be provided.
-
-## General
-
-- don't document a language's specifics, e.g. operators
+- don't document computer language's interna
 
 - best use language structure to document
 
@@ -96,31 +91,30 @@ To ensure the best documentation of our code we can we meet on a weekly base for
 
 - documentation and variable language is American English
 
-- docs should be as close to the code as possible
+- should be as code-near as possible
 
-- every code repository must have
+- every code repo must have
 
     - a README.md file that contains
-        - link to original repository (if the software is forked or otherwise based on preexisting software)
-        - short introduction on what the repository is about
-        - a guide how to get the software running (if makes sense)
+        - link to original repository
+        - short introduction
         - link to demo instance
         - example or demo installation
-        - link to license file
+        - link to licence file
         - contribution guide
         - link to style guide
-        - link to bug tracker/project management system
+        - link to bugtracker/project managemenmt system
         - known issues
-        - badges to CI status
+        - badges to ci status
 
     A good example can be found [here](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2).
     - a LICENCE file
 
-## Developer Documentation
+### Developer documentation
 
-### Architecture of the Software
+#### Architecture of the software
 
-Each software project should be documented using an architecture diagram that helps understanding its basic functionality (even though using tools to generate diagrams such as UML class diagrams doesn't seem to be possible in every case).
+Each software project should be documented using an architecture diagram that helps understanding its basic functionality (using tools to generate diagrams such as UML class diagrams seems not to be possible in every case).
 
 Examples:
 
@@ -128,24 +122,25 @@ Examples:
 
 Call diagrams can be useful to follow code and service calls and should be existing for every API method.
 
-### API Documentation
+#### API documentation
 
-- The docs should comprise used parameters, author and @since annotations
+- Used parameters, author and since annotations
 
-- [Example for Java](https://lab.sub.uni-goettingen.de/self-updating-docs.html)
+- Example for Java: <https://lab.sub.uni-goettingen.de/self-updating-docs.html>
 
-- Links to callers must not be listed in the documentation, because this info will be deprecated soon. It is strongly recommended to use call stacks of tools like Eclipse (Java) and/or Call Graph Module (SADE).
+- Links to callers must not be listed in the documentation, because this info will be deprecated soon. Strongly recommended is using call stacks of tools like Eclipse (Java) and/or Call Graph Module (SADE).
 
-- Document REST-APIs using [openAPI](https://github.com/OAI/OpenAPI-Specification) if possible. OpenAPI docs should be located at `/doc/api` on servers.
+- We do meet and write documentation together regularly (documentation sprint) every friday from 1 PM in the RDD meeting room. WE NEED COOKIES!
 
-## Admin Documentation
+- Document REST-APIs using [openAPI](https://github.com/OAI/OpenAPI-Specification) if possible. OpenAPI docs should be located at /doc/api on servers.
 
-- The docs should comprise how to install the software, how to run and/or restart it, how to test the installation, ...
+### Admin Documentation
 
-- Server documentation: This type of documentation is provided and maintained in our wiki space.
-We have a template encompassing all information necessary: To create a wiki page for a new server navigate to the FE Server list, select "..." right beside the "Create" button and search for "FE-Server".
+- how to install the software, how to run and/or restart it, how to test the installation, ...
 
-## User Documentation
+- server documentation
+
+### User Documentation
 
 - how to use the software and APIs, FAQs, walkthroughs, ...
 
@@ -157,88 +152,85 @@ We have a template encompassing all information necessary: To create a wiki page
 - screencasts
 
 
-# Which version control do you use? You do use version control, do you?
+## Which version control do you use? You do use version control, do you?
 
-We exclusively use git in RDD. Please see <https://git-scm.com/doc> for information on how it works.
+We are using GIT in RDD! Nothing else! How it works, please see <https://git-scm.com/doc>.
 
-We recommend to use the [Git flow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) (also consult the [Cheat Sheet](https://danielkummer.github.io/git-flow-cheatsheet)).
-For git flow it is safest to protect your master and develop branch on server side to avoid accidental pushes into these branches. All specific branches working on an issue described in a bug tracker may utilize the following naming scheme: `[track]/#[ISSUENUMBER]-[KEYWORD]`, e.g. `bugfix/#12-flux-capacitor`.
+We recommend to use Gitflow Workflow: <https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow>, Cheat Sheet: <https://danielkummer.github.io/git-flow-cheatsheet>), if possible on server side: use protection of the develop and master branches. All specific branches working on an issue descibed in a bug tracker may utilize the following naming scheme: `[track]/#[ISSUENUMBER]-[KEYWORD]`, e.g. `bugfix/#12-flux-capacitor`.
 
-A GitHub workflow used in DARIAH-DE and related services is described in the [DARIAH-DE Wiki](https://wiki.de.dariah.eu/display/DARIAH3/DARIAH-DE+Release+Management#DARIAH-DEReleaseManagement-Beispielmitdevelop-undmaster-Branch(Gitflow)).
+A github workflow used in DARIAH-DE and related services is described in the DARIAH-DE Wiki: <https://wiki.de.dariah.eu/display/DARIAH3/DARIAH-DE+Release+Management#DARIAH-DEReleaseManagement-Beispielmitdevelop-undmaster-Branch(Gitflow)>
 
-It is also recommended to automatically close issues via commit message; How this works exactly depends on the Git repository server. Issues can also be referenced across repositories (cf. [link](https://help.github.com/articles/autolinked-references-and-urls/#commit-shas)).
+Automatically closing issues via commit message depends on the Git repository server. Issues can also be referenced across repositories (cf. [link](https://help.github.com/articles/autolinked-references-and-urls/#commit-shas)).
 
-We use the following Git servers at the moment in RDD:
+Which repo you are using depends on:
 
-- Projects (GWDG) --> <https://projects.gwdg.de>
-- GitLab (GWDG) --> <https://gitlab.gwdg.de>
-- github.org --> <https://github.com/subugoe>
-
-
-Which one is suitable for you depends on:
-
-- the project you are working on
+- the project
 - existing code
-- whether or not you want to use CI/CD or GitLab Runners
+- using Gitlab Runners
 - ...
 
+We use the following at the moment in RDD:
+
+- Projects (GWDG) --> <https://projects.gwdg.de>
+- Gitlab (GWDG) --> <https://gitlab.gwdg.de>
+- github.org --> <https://github.com/subugoe>
+
+We have got an RDD team on Github: <https://github.com/orgs/subugoe/teams/fe>
 
 
-We have got an [RDD team on GitHub](https://github.com/orgs/subugoe/teams/fe). Feel free to join us!
+Consider mirroring of repos for project visibility (e.g. mirror Gitlab/Projects code to Github?)
 
 
-Consider mirroring of repos for project visibility (e.g. mirror GitLab/Projects code to Github?)
-
-
-# Do you track your bugs properly?
+## Are you tracking your bugs properly?
 
 A bug tracking system is obligatory! Please use the respective bug tracking system of your repo and/or project management solution (please see chapter version control)!
 
 
-# Do you test your software?
+## What is your test coverage?
 
-We aim to have a test coverage of **100%** (except for getter and setter methods). This is understood on a component level, which means that every method should have at least one test. Whether you achieve this by Test Driven Development (TDD) or not is specific to your preferred way to work.
+We aim to have a test coverage of **100%** (except for getter and setter methods).
+Whether you achive this by Test Driven Development (TDD) or not is specific to
+your preferred way to work.
 
 Please keep in mind not only to write a test for each of your functions but also
 to consider all possible outcomes. It is e.g. not sufficient to test if a function
 creates a file if the written content depends on variables etc.
 
-Examples for writing tests in different programming languages are:
+Examples for different programming languages are:
 
-- [**XQuery**](https://gist.github.com/joewiz/fa32be80749a69fcb8da)
+- **XQuery**: <https://gist.github.com/joewiz/fa32be80749a69fcb8da>
 
 
-# Building Code and Continuous Integration
+## Building code and continuous integration
 
-## Building Code
+### Building code
 
-Ideally we use build tools to conveniently get a software running.
 The reason for using a build tool is to be able to build and/or test a code project with one command (after checking out). Another reason is to include dependency management.
 
-#### Build tools we are using at the moment
+##### Build tools we are using at the moment
 
-* **bash scripting**: (BdNPrint, FontanePrint)
+* **bash scripting**: (BdN Print, Fontane Print)
 * **eXist**: Ant (SADE)
 * **Java**: Maven (TextGrid)
 * **JavaScript**:
-  + bower (DARIAH-DE GeoBrowser, tgForms)
-  + cake (tgForms)
-  + NPM (DARIAH-DE Publikator, tgForms)
-  + rake (DARIAH-DE GeoBrowser)
+  * bower (DARIAH-DE GeoBrowser, tgForms)
+  * cake (tgForms)
+  * NPM (DARIAH-DE Publikator, tgForms)
+  * rake (DARIAH-DE Geo-Browser)
 * **Phython**:
-  + make (Sphinx documentation)
-  + PIP (DiscussData)
+  * make (Sphinx documentation)
+  * PIP (DiscussData)
 * **Ruby**: bundler (DARIAH status page)
 
-#### Build tools we want to evaluate
+##### Build tools we want to evaluate
 
 * gradle
 
-## Continuous Integration
+### Continuous integration
 
 We want to use CI as soon as possible in new projects.
 
-The workflows we are using currently in Jenkins and GitLab Runner are:
+The workflows we are using currently in Jenkins and Gitlab Runner are:
 
 * Code building
 * Testing
@@ -247,10 +239,10 @@ The workflows we are using currently in Jenkins and GitLab Runner are:
 * Distribution (Nexus, APTLY repo, eXist repo)
 * Release Management (via GitLab Environments and gitflow)
 
-### Sample configuration of the GitLab Runner
+#### Sample configuration of the GitLab Runner
 
 The following example illustrates how the GitLab Runner is used in SADE.
-The full and documented version of this file can be viewed [here](https://gitlab.gwdg.de/SADE/SADE/blob/develop/.gitlab-ci.yml).
+The fully documented version of this file can be viewed [here](https://gitlab.gwdg.de/SADE/SADE/blob/develop/.gitlab-ci.yml).
 
 
 ```
@@ -258,6 +250,8 @@ image: docker.gitlab.gwdg.de/fontane-notizbuecher/build:latest
 
 stages:
   - build
+  - test
+  - deploy
 
 build-develop:
   except:
@@ -282,14 +276,46 @@ build-master:
     paths:
       - build/*.xar
       - test/
+
+installation:
+  except:
+      - tags
+  stage: test
+  script:
+    - bash test/eXist-db-*/bin/startup.sh | tee output.log &
+    # wait for eXist to have started
+    - while [ $(curl --head --silent http://localhost:8080 | grep -c "200 OK") == 0 ]; do sleep 2s; done
+    # shutdown eXist
+    - bash test/eXist-db-*/bin/shutdown.sh
+    - ls -al /tmp; mv /tmp/tests-* . || true
+  artifacts:
+    paths:
+      - output.log
+      - test/tests-*.xml
+      - test/eXist-db-*/webapp/WEB-INF/logs/expath-repo.log
+    # this enables us to get information like test coverage.
+    reports:
+        junit: test/tests-*.xml
+
+
+upload:
+  only:
+      - master
+      - develop
+  except:
+      - tags
+  stage: deploy
+  script:
+    - FILENAME=$(ls build/*.xar)
+    - curl -u ci:${EXIST_UPLOAD_PW} -X POST -F file=@${FILENAME} https://ci.de.dariah.eu/exist-upload
 ```
 
 
-### Sample configuration of the Jenkins CI (Multibranch Pipelines)
+#### Sample configuration of the Jenkins CI (Multibranch Pipelines)
 
-- On commit and push to the <https://projects.gwdg.de> gitolite repo (such as <https://projects.gwdg.de/projects/tg-crud/repository>) Jenkins on [ci.de.dariah.eu](https://ci.de.dariah.eu/jenkins) is notified (see projects' gitolite configuration)
+- On commit and push to the <https://projects.gwdg.de> gitolite repo (such as <https://projects.gwdg.de/projects/tg-crud/repository>) Jenkins on ci.de.dariah.eu <https://ci.de.dariah.eu/jenkins> is notified (see projects' gitolite configuration)
 
-- Jenkins then does a checkout and build of configured branches (see Jenkins' project's multibranch pipeline configuration such as <https://ci.de.dariah.eu/jenkins/job/DARIAH-DE-CRUD-Services>. Here comes THE CRUD Jenkinsfile, as it is used for other projects in a very similar way:
+- Jenkins then is doing a checkout and build of configured branches (see Jenkins' project's multibranch pipeline configuration such as <https://ci.de.dariah.eu/jenkins/job/DARIAH-DE-CRUD-Services>. Here comes THE CRUD Jenkinsfile, as it is used for other projects in a very similar way:
 
 
 ```
@@ -341,27 +367,35 @@ node {
 
 - Stage *Preparation*: Prepare things
 
-- Stage *Build*: Build, JAR, WAR, and DEB packages from source code, deploy JAR and WAR packages to the [Nexus repo](https://nexus.gwdg.de). For further information on Nexus cf. [ci's server documentation](https://wiki.de.dariah.eu/display/FEAD/ci.de.dariah.eu). Jenkins is configured to deploy JARs and WARs via Maven and a Nexus deploy-account.
+- Stage *Build*: Build, JAR, WAR, and DEB packages from source code, deploy JAR and WAR packages to the Nexus repo (at the moment <https://ci.de.dariah.eu/nexus> --> in the near future <https://nexus.gwdg.de>). Jenkins is configured to deploy JARs and WARs via Maven and a Nexus deploy-account.
 
-- Stage *Publish*: Publish DEB packages to the [DARIAH-DE Aptly Repo](https://ci.de.dariah.eu/aptly). Jenkins is using a shared library of scripts and publishing is devided into four conditionals: TG version, DH version, SNAPSHOT version, or RELEASE version due to given version suffixes!
+- Stage *Publish*: Publish DEB packages to the DARIAH-DE Aptly Repo <https://ci.de.dariah.eu/aptly>. Jenkins is using a shared library of scripts and publishing is devided into four conditionals: TG version, DH version, SNAPSHOT version, or RELEASE version due to given version suffixes!
 
 
-# Deployment and maintenance
+## Deployment and maintenance
 
-## Puppet
+### Puppet
 
-## Monitoring
+For server configuration and setup we are using puppet for the most servers. The main puppet code is contained in GitLab <https://gitlab.gwdg.de/dariah-de-puppet>. The DARIAH-DE and TextGrid Repository module (dhrep) is contained in Github <https://github.com/DARIAH-DE/puppetmodule-dhrep>.
 
-## Release Management
+### Monitoring
+
+- Icinga probes for DARIAH-DE services <https://icinga.de.dariah.eu/icinga>
+
+- Metrics for Sever specific monitoring <https://metrics.gwdg.de>
+
+### Release Management
 
 # Code quality level for RDD
+
+- Evaluate Software maturity levels from CESSDA: @TODO @mw
 
 ## Code review
 We want to ensure code review for all major commits, in gitflow for everything
 that is subject to be merged into `develop`.
 
-For projects with more than one developer in the team it is preferred to have code
-reviews within the team, in other cases your friendly RDD developer team is
+Projects with more than one developer in the team, it is preferred to have code
+reviewer within the team, in other cases your friendly rdd developer team is
 on your side.
 
 ### Proof of concept
@@ -371,21 +405,19 @@ not necessary.
 
 # Licensing
 
-- clarify software license before programming
+- clarify software licence before programming
 
-- add license to code header
+- add licence to code header
 
 Best practice is to maintain a file listing all third-party packages that are
 part of the software. This list should hold the following metadata and SHOULD be
 prepared like the table below, always in alphanumeric order.
 
-```
 | name | license | origin |
 |---|---|---|---|
 | foo | barware | github.com/foo/bar |
-```
 
-Maybe the `license-maven` plugin will help you.
+May be the `license-maven` plugin will help you.
 
 # Retirement of software
 
