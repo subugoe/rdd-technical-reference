@@ -7,13 +7,13 @@ title:  'SUB RDD Technical Reference'
 
 **Author**: Software Quality Working Group\
 \
-**Purpose**:
-This guideline should help you getting started a new software development project (or improving an existing one!) in the Research and Development Department of the Göttingen State and University Library.
-
-Our goal is to establish better software quality by following standards the developer team has mutually agreed upon. Roughly basing on the [EURISE Network Technical Reference](https://eurise-network.github.io/), these standards are discussed, worked out, and decided in the Software Quality Working Group, which meets biweekly on Tuesdays at 13:00-14:00. However, they aren't cast in stone, so in case you have a good idea for a better standard, feel free to contribute!\
+**Audience**: Developers of the Research and Development Department of the Göttingen State and University Library.
 \
-**Status**:
-This document is a living document and will be extended as soon as the Software Quality Working Group has agreed upon a new standard for software projects in RDD.
+**Purpose**: This guideline should help you getting started a new software development project (or improving an existing one!) in the Research and Development Department of the Göttingen State and University Library.
+
+Our goal is to establish better software quality by following standards the developer team has mutually agreed upon. Roughly basing on the [EURISE Network Technical Reference](https://eurise-network.github.io/), these standards are discussed, worked out, and decided in the Software Quality Working Group, which meets biweekly on Tuesdays at 13:00--14:00. However, they aren't cast in stone, so in case you have a good idea for a better standard, feel free to contribute!\
+\
+**Status**: This document is a living document and will be extended as soon as the Software Quality Working Group has agreed upon a new standard for software projects in RDD.
 TODOs and addenda of this document are maintained [here](https://github.com/subugoe/rdd-technical-reference/issues/).
 
 # Style Guides
@@ -82,25 +82,22 @@ SELECT DISTINCT
 
 # Is Your Software Fully Documented?
 
-## Docs Sprints
+## Doc Sprints
 
-To ensure the best documentation of our code we can we meet on a weekly base for a code sprint to document everything we have coded throughout the week and haven't been able to document properly yet. The meeting takes place in the meeting room at 1pm. Cookies may be provided.
+To ensure the best documentation of our code we meet on a weekly base for a code sprint to document everything we have coded throughout the week and haven't been able to document properly yet. The meeting takes place in the meeting room at 1pm. Cookies may be provided.
 
 ## General
 
-- don't document a language's specifics, e.g. operators
+- Don't document a language's specifics, e.g. operators.\
+*Example:* Use of `=>` in the XQuery expression `replace("qbc", "q", "b") => substring(1, 2)` MUST NOT be explained in a comment.
+- It is best to use a language's structure to document.
+- Write the best documentation you can.
+- Documentation and variable language is American English.
+- Docs should be as close to the code as possible.\
+This refers both to the documentation in a repository and in the code itself, e.g. inline documentation.
+- Every code repository MUST have:
 
-- best use language structure to document
-
-- write the best documentation you can
-
-- documentation and variable language is American English
-
-- docs should be as close to the code as possible
-
-- every code repository must have
-
-    - a README.md file that contains
+    - a README.md file according to [this template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2) that contains
         - link to original repository (if the software is forked or otherwise based on preexisting software)
         - short introduction on what the repository is about
         - a guide how to get the software running (if makes sense)
@@ -112,17 +109,15 @@ To ensure the best documentation of our code we can we meet on a weekly base for
         - link to bug tracker/project management system
         - known issues
         - badges to CI status
-
-    A good example can be found [here](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2).
-    - a LICENCE file
+    - a LICENSE file
 
 ## Developer Documentation
 
 ### Architecture of the Software
 
-Each software project should be documented using an architecture diagram that helps understanding its basic functionality (even though using tools to generate diagrams such as UML class diagrams doesn't seem to be possible in every case).
+Each software project should be documented using an architecture diagram that helps understanding its basic functionality (even though using tools to generate diagrams such as UML class diagrams doesn't seem to be possible in every case).\
 
-Examples:
+*Examples:*
 
 - [Generating call graphs in eXist-db](https://gitlab.gwdg.de/SADE/SADE/tree/develop/modules/callgraph)
 
@@ -142,7 +137,10 @@ Call diagrams can be useful to follow code and service calls and should be exist
 
 - The docs should comprise how to install the software, how to run and/or restart it, how to test the installation, ...
 
-- Server documentation: This type of documentation is provided and maintained in our wiki space.
+## Server documentation:
+
+This type of documentation is provided and maintained in our DARIAH wiki space.\
+
 We have a template encompassing all information necessary: To create a wiki page for a new server navigate to the FE Server list, select "..." right beside the "Create" button and search for "FE-Server".
 
 ## User Documentation
@@ -162,11 +160,15 @@ We have a template encompassing all information necessary: To create a wiki page
 We exclusively use git in RDD. Please see <https://git-scm.com/doc> for information on how it works.
 
 We recommend to use the [Git flow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) (also consult the [Cheat Sheet](https://danielkummer.github.io/git-flow-cheatsheet)).
-For git flow it is safest to protect your master and develop branch on server side to avoid accidental pushes into these branches. All specific branches working on an issue described in a bug tracker may utilize the following naming scheme: `[track]/#[ISSUENUMBER]-[KEYWORD]`, e.g. `bugfix/#12-flux-capacitor`.
+For git flow it is safest to protect your master and develop branch on server side to avoid accidental pushes into these branches. All specific branches working on an issue described in a bug tracker may utilize the following naming scheme:\
+\
+`[track]/#[ISSUENUMBER]-[KEYWORD]`\
+\
+e.g. `bugfix/#12-flux-capacitor`.
 
 A GitHub workflow used in DARIAH-DE and related services is described in the [DARIAH-DE Wiki](https://wiki.de.dariah.eu/display/DARIAH3/DARIAH-DE+Release+Management#DARIAH-DEReleaseManagement-Beispielmitdevelop-undmaster-Branch(Gitflow)).
 
-It is also recommended to automatically close issues via commit message; How this works exactly depends on the Git repository server. Issues can also be referenced across repositories (cf. [link](https://help.github.com/articles/autolinked-references-and-urls/#commit-shas)).
+It is also recommended to automatically close issues via commit message; How this works exactly depends on the Git repository server. Issues can also be [referenced across repositories](https://help.github.com/articles/autolinked-references-and-urls/#commit-shas).
 
 We use the following Git servers at the moment in RDD:
 
@@ -221,13 +223,14 @@ The reason for using a build tool is to be able to build and/or test a code proj
 * **eXist**: Ant (SADE)
 * **Java**: Maven (TextGrid)
 * **JavaScript**:
-  + bower (DARIAH-DE GeoBrowser, tgForms)
-  + cake (tgForms)
-  + NPM (DARIAH-DE Publikator, tgForms)
-  + rake (DARIAH-DE GeoBrowser)
+    - bower (DARIAH-DE GeoBrowser, tgForms)
+    - cake (tgForms)
+    - NPM (DARIAH-DE Publikator, tgForms)
+    - rake (DARIAH-DE GeoBrowser)
+
 * **Phython**:
-  + make (Sphinx documentation)
-  + PIP (DiscussData)
+    - make (Sphinx documentation)
+    - PIP (DiscussData)
 * **Ruby**: bundler (DARIAH status page)
 
 #### Build tools we want to evaluate
@@ -249,8 +252,7 @@ The workflows we are using currently in Jenkins and GitLab Runner are:
 
 ### Sample configuration of the GitLab Runner
 
-The following example illustrates how the GitLab Runner is used in SADE.
-The full and documented version of this file can be viewed [here](https://gitlab.gwdg.de/SADE/SADE/blob/develop/.gitlab-ci.yml).
+The full and documented example of how the GitLab Runner is used in SADE can be viewed [here](https://gitlab.gwdg.de/SADE/SADE/blob/develop/.gitlab-ci.yml).
 
 
 ### Sample configuration of the Jenkins CI (Multibranch Pipelines)
@@ -270,7 +272,7 @@ The full and documented version of this file can be viewed [here](https://gitlab
 
 ## Puppet
 
-For server configuration and setup we are using puppet for the most servers. The main puppet code is contained in GitLab <https://gitlab.gwdg.de/dariah-de-puppet>. The DARIAH-DE and TextGrid Repository module (dhrep) is contained in Github <https://github.com/DARIAH-DE/puppetmodule-dhrep>.
+For server configuration and setup we use puppet for most servers. The main puppet code is provided in GitLab <https://gitlab.gwdg.de/dariah-de-puppet>. The DARIAH-DE and TextGrid Repository module (dhrep) is contained in Github <https://github.com/DARIAH-DE/puppetmodule-dhrep>.
 
 ### Monitoring
 
@@ -323,16 +325,23 @@ Maybe the `license-maven` plugin will help you.
 
 # Helpful links and references
 
-- eurise-network technical-reference: <https://github.com/eurise-network/technical-reference>
+- EURISE-network technical-reference:\
+<https://github.com/eurise-network/technical-reference>
 
-- DHTech -- An international grass-roots community of Digital Humanities software engineers: <https://dh-tech.github.io>
+- DHTech -- An international grass-roots community of Digital Humanities software engineers:\
+<https://dh-tech.github.io>
 
-- The Software Sustainability Institute, Guidelines and Publications: <https://www.software.ac.uk>
+- The Software Sustainability Institute, Guidelines and Publications:\
+<https://www.software.ac.uk>
 
-- The Joel Test: 12 Steps to Better Code: <https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code>
+- The Joel Test: 12 Steps to Better Code:\
+<https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code>
 
-- Software Quality Guidelines: <https://github.com/CLARIAH/software-quality-guidelines>
+- Software Quality Guidelines:\
+<https://github.com/CLARIAH/software-quality-guidelines>
 
-- Software Testing Levels: <http://softwaretestingfundamentals.com/software-testing-levels>
+- Software Testing Levels:\
+<http://softwaretestingfundamentals.com/software-testing-levels>
 
-- Netherlands eScience Center Guide <https://guide.esciencecenter.nl>
+- Netherlands eScience Center Guide\
+<https://guide.esciencecenter.nl>
