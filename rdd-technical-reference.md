@@ -415,9 +415,9 @@ Best practice is to maintain a file listing all third-party packages that are
 part of the software. This list should hold the following metadata and SHOULD be
 prepared like the table below, always in alphanumeric order.
 
-| name | license | origin |
-|---|---|---|---|
-| foo | barware | github.com/foo/bar |
+name  license  origin            
+----  -------  ------------------
+foo   barware  github.com/foo/bar
 
 May be the `license-maven` plugin will help you.
 
