@@ -398,6 +398,8 @@ Projects with more than one developer in the team, it is preferred to have code
 reviewer within the team, in other cases your friendly rdd developer team is
 on your side.
 
+- idea: invite all developers to a MR, at least 2 approvals needed for MR taking place. this way, everbody gets the chance to have a look at other people's code
+
 ### Proof of concept
 When preparing a proof of concept that is always labeled `poc`, a code review is
 not necessary.
