@@ -214,7 +214,7 @@ Examples for writing tests in different programming languages are:
 
 ## Building Code
 
-Ideally we use build tools to conveniently get a software running.
+Ideally, we use build tools to conveniently get a software running.
 The reason for using a build tool is to be able to build and/or test a code project with one command (after checking out). Another reason is to include dependency management.
 
 #### Build tools we are using at the moment
@@ -228,7 +228,7 @@ The reason for using a build tool is to be able to build and/or test a code proj
     - NPM (DARIAH-DE Publikator, tgForms)
     - rake (DARIAH-DE GeoBrowser)
 
-* **Phython**:
+* **Python**:
     - make (Sphinx documentation)
     - PIP (DiscussData)
 * **Ruby**: bundler (DARIAH status page)
@@ -239,7 +239,13 @@ The reason for using a build tool is to be able to build and/or test a code proj
 
 ## Continuous Integration
 
-We want to use CI as soon as possible in new projects.
+We want to use CI as soon as possible in new projects. Please set up your gitlab-project to show your pipeline-status and test-coverage for your default-branch under Settings/General->Badges. The generic links for all projects are: 
+* Pipeline-status
+    - Link: `https://gitlab.gwdg.de/%{project_path}/commits/%{default_branch}`
+    - Badge image URL: `https://gitlab.gwdg.de/%{project_path}/badges/%{default_branch}/pipeline.svg?style=flat-square`
+* Test-coverage
+    - Link: `https://gitlab.gwdg.de/%{project_path}/commits/%{default_branch}`
+    - Badge image URL: `https://gitlab.gwdg.de/%{project_path}/badges/%{default_branch}/coverage.svg?style=flat-square`
 
 The workflows we are using currently in Jenkins and GitLab Runner are:
 
@@ -252,7 +258,7 @@ The workflows we are using currently in Jenkins and GitLab Runner are:
 
 ### Sample configuration of the GitLab Runner
 
-The full and documented example of how the GitLab Runner is used in SADE can be viewed [here](https://gitlab.gwdg.de/SADE/SADE/blob/develop/.gitlab-ci.yml).
+There is a [full and documented example](https://gitlab.gwdg.de/SADE/SADE/blob/develop/.gitlab-ci.yml) of how the GitLab Runner is used in SADE.
 
 
 ### Sample configuration of the Jenkins CI (Multibranch Pipelines)
@@ -295,7 +301,7 @@ on your side.
 - idea: invite all developers to a MR, at least 2 approvals needed for MR taking place. this way, everbody gets the chance to have a look at other people's code
 
 
-### Proof of concept
+## Proof of concept
 When preparing a proof of concept that is always labeled `poc`, a code review is
 not necessary.
 
