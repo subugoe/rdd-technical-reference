@@ -70,7 +70,7 @@ SELECT DISTINCT
 (group_concat( distinct ?conceptUri;separator="; ") as ?conceptUris)
 (group_concat( distinct ?next;separator="; ") as ?nexts)
 (group_concat( distinct ?def;separator="; ") as ?defs)
-  WHERE {       
+  WHERE {
 	<' + uri + '> skos:narrower ?conceptUri.
 	?conceptUri skos:prefLabel ?conceptName.
   OPTIONAL {?conceptUri skos:narrower ?next.}
@@ -168,6 +168,8 @@ e.g. `bugfix/#12-flux-capacitor`.
 
 A GitHub workflow used in DARIAH-DE and related services is described in the [DARIAH-DE Wiki](https://wiki.de.dariah.eu/display/DARIAH3/DARIAH-DE+Release+Management#DARIAH-DEReleaseManagement-Beispielmitdevelop-undmaster-Branch(Gitflow)).
 
+You could also use the [GitLab flow](https://docs.gitlab.com/ee/topics/gitlab_flow.html) as a simpler alternative, which can be broken down into [11 Rules](https://about.gitlab.com/blog/2016/07/27/the-11-rules-of-gitlab-flow/).
+
 It is also recommended to automatically close issues via commit message; How this works exactly depends on the Git repository server. Issues can also be [referenced across repositories](https://help.github.com/articles/autolinked-references-and-urls/#commit-shas).
 
 We use the following Git servers at the moment in RDD:
@@ -239,7 +241,7 @@ The reason for using a build tool is to be able to build and/or test a code proj
 
 ## Continuous Integration
 
-We want to use CI as soon as possible in new projects. Please set up your gitlab-project to show your pipeline-status and test-coverage for your default-branch under Settings/General->Badges. The generic links for all projects are: 
+We want to use CI as soon as possible in new projects. Please set up your gitlab-project to show your pipeline-status and test-coverage for your default-branch under Settings/General->Badges. The generic links for all projects are:
 * Pipeline-status
     - Link: `https://gitlab.gwdg.de/%{project_path}/commits/%{default_branch}`
     - Badge image URL: `https://gitlab.gwdg.de/%{project_path}/badges/%{default_branch}/pipeline.svg?style=flat-square`
