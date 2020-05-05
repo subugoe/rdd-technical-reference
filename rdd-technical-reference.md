@@ -223,7 +223,9 @@ The reason for using a build tool is to be able to build and/or test a code proj
 
 * **bash scripting**: (BdNPrint, FontanePrint)
 * **eXist**: Ant (SADE)
-* **Java**: Maven (TextGrid)
+* **Java**: 
+    - Maven (TextGrid)
+    - gradle (TextGrid)
 * **JavaScript**:
     - bower (DARIAH-DE GeoBrowser, tgForms)
     - cake (tgForms)
