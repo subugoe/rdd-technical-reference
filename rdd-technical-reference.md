@@ -223,7 +223,7 @@ The reason for using a build tool is to be able to build and/or test a code proj
 
 * **bash scripting**: (BdNPrint, FontanePrint)
 * **eXist**: Ant (SADE)
-* **Java**: 
+* **Java**:
     - Maven (TextGrid)
     - gradle (TextGrid)
 * **JavaScript**:
@@ -302,7 +302,17 @@ For projects with more than one developer in the team it is preferred to have co
 reviews within the team, in other cases your friendly RDD developer team is
 on your side.
 
-- idea: invite all developers to a MR, at least 2 approvals needed for MR taking place. this way, everbody gets the chance to have a look at other people's code
+- idea: invite all developers to a MR, at least 2 approvals needed for MR taking place. this way, everybody gets the chance to have a look at other people's code
+
+### Sample workflow: Code reviews in SADE
+
+1. A developer decides to work on a feature. She commits her changes to a separate feature branch. After some time she finishes the feature and wants it to be part of the development branch.
+2. The developer creates a merge request and assigns everybody she sees fit to properly review her code to it.
+3. To avoid diffusion of responsibility, she also assigns one of the chosen assignees as MUST. This means that this person has to approve the MR, otherwise the merge cannot be done. Although GitLab sends notifications to everybody who is newly assigned to a MR, she should notify the MUST assignee personally (in case he or she doesn't notice the mail sent by GitLab).
+4. The MUST assignee reviews the changes according to style, variable naming, understandability, documentation provided, functionality, etc. If everything is to his or her liking, he or she approves the MR. The other assignees are free to review the code as well. **Note:** MRs without docs should not be accepted.
+5. After the MR has been (dis)approved, the assignee removes his- or herself from the list of assignees. The MUST assignee informs the developer over the review being done.
+6. The developer merges her changes into the development branch.
+
 
 
 ## Proof of concept
