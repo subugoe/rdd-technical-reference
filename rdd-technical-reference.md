@@ -44,7 +44,7 @@ the department.
 
 - **Python**: For Python [PEP 8](https://www.python.org/dev/peps/pep-0008/) should be used, Django has a style guide based on PEP-8 with some exceptions: [Django-Styleguide](https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/coding-style/). There are linters and tools like [flake-8](https://pypi.org/project/flake8/) and [pep-8](https://pypi.org/project/pep8/) available as support.
 
-- **SPARQL**: For SPARQL there is not really any official style guide and there is no possibility to simply include any code style automatically using a code style file. We just collect some advice how to format and use SPARQL code [here] (https://github.com/subugoe/rdd-technical-reference/tree/master/style-guides/rdd-sparql.md).
+- **SPARQL**: For SPARQL there is not really any official style guide and there is no possibility to simply include any code style automatically using a code style file. We just collect some advice how to format and use SPARQL code [here](https://github.com/subugoe/rdd-technical-reference/tree/master/style-guides/rdd-sparql.md).
 
 
 # Is Your Software Fully Documented?
