@@ -1,4 +1,4 @@
-# The SUB-RDD XSLT style guide
+# The SUB RDD XSLT Style Guide
 
 ## Purpose
 
