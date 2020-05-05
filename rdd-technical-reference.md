@@ -39,45 +39,12 @@ For the more prominent programming languages we have formatting and general styl
     - use four spaces for a TAB (because eXide switching the preferences in eXide's setting isn't permanent)
 
 - **XSLT**: Since there is no official style guide for XSLT, we decided to write
-[our own](https://github.com/subugoe/rdd-technical-reference/tree/master/style-guides/FE-XSLT.pdf), resulting from common best practices and own experiences within
+[our own](https://github.com/subugoe/rdd-technical-reference/tree/master/style-guides/rdd-xslt.md), resulting from common best practices and own experiences within
 the department.
 
 - **Python**: For Python [PEP 8](https://www.python.org/dev/peps/pep-0008/) should be used, Django has a style guide based on PEP-8 with some exceptions: [Django-Styleguide](https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/coding-style/). There are linters and tools like [flake-8](https://pypi.org/project/flake8/) and [pep-8](https://pypi.org/project/pep8/) available as support.
 
-- **SPARQL**: For SPARQL there is not really any official style guide and there is no possibility to simply include any code style automatically using a code style file. We just collect some advice how to format and use SPARQL code.
-
-    - declaration of variables should start with a **?** (and not with a **$**).
-    - opening parenthesis **{** should be at the end of the line. Closing parenthesis in a separate line. Example:
-
-```
-SELECT * WHERE {
-    ?s ?p ?o .
-} LIMIT 10
-```
-
-'''
-    - group concatenations in SELECT command should be in seperate lines.
-'''
-
-```
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX dct: <http://purl.org/dc/terms/>
-
-SELECT DISTINCT
-(group_concat( distinct ?conceptName;separator="; ") as ?conceptNames)
-(group_concat( distinct ?conceptUri;separator="; ") as ?conceptUris)
-(group_concat( distinct ?next;separator="; ") as ?nexts)
-(group_concat( distinct ?def;separator="; ") as ?defs)
-  WHERE {
-	<' + uri + '> skos:narrower ?conceptUri.
-	?conceptUri skos:prefLabel ?conceptName.
-  OPTIONAL {?conceptUri skos:narrower ?next.}
-  OPTIONAL {?conceptUri skos:definition ?def.}
-	FILTER(LANG(?conceptName) = "" || LANGMATCHES(LANG(?conceptName), "en"))
-} GROUP BY ?conceptUri
-```
+- **SPARQL**: For SPARQL there is not really any official style guide and there is no possibility to simply include any code style automatically using a code style file. We just collect some advice how to format and use SPARQL code [here] (https://github.com/subugoe/rdd-technical-reference/tree/master/style-guides/rdd-sparql.md).
 
 
 # Is Your Software Fully Documented?
