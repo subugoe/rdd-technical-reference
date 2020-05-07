@@ -16,6 +16,14 @@ Our goal is to establish better software quality by following standards the deve
 **Status**: This document is a living document and will be extended as soon as the Software Quality Working Group has agreed upon a new standard for software projects in RDD.
 TODOs and addenda of this document are maintained [here](https://github.com/subugoe/rdd-technical-reference/issues/).
 
+
+# Explanatory Notes
+
+**CESSDA's Software Maturity Levels (SML)**: Several organizations already have put a lot of work into developing metrics for good software. Since we didn't want to reinvent the wheel, we decided to adapt (and modify if need be) a metric which suits our needs. [CESSDA]() is one of the ERICs, and although it focuses on Social Sciences it has similar requirements regarding its software.
+\
+Throughout the document you will find sections with the heading "CESSDA's Software Maturity Levels in RDD" in which we describe which of the SMLs we aim for and how we want to implement it.
+
+
 # Style Guides
 
 ## General
