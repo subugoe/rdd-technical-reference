@@ -108,15 +108,46 @@ Call diagrams can be useful to follow code and service calls and should be exist
 
 - Document REST-APIs using [openAPI](https://github.com/OAI/OpenAPI-Specification) if possible. OpenAPI docs should be located at `/doc/api` on servers.
 
+
+### CESSDA's Software Maturity Levels in RDD (CA1.3)
+
+#### MUST
+
+`MUST` be SML2, which is defined as follows:
+
+> There is external documentation that describes public API functionality and is sufficient to be used by an experienced developer. If available, source code is consistently and clearly commented. Source code naming conventions are adhered to and consistent.
+
+#### Actions to be taken in RDD
+- public API is fully documented, e.g. by using OpenAPI
+- naming conventions still have to be discussed --> style guide?
+- reference to style guide used in the CONTRIBUTING/README file?
+
+
 ## Admin Documentation
 
 - The docs should comprise how to install the software, how to run and/or restart it, how to test the installation, ...
+
+### CESSDA's Software Maturity Levels in RDD (CA1.2)
+
+#### MUST
+
+`MUST` be SML3, which is defined as follows:
+
+> There is a deployment and configuration manual that can guide an experienced operational user through deployment, management and configuration of the software. Exception and failure messages are explained, but descriptions of solutions are not available. Documentation is consistent with current version of the software.
+
+#### Actions to be taken in RDD
+- deployment: short deployment descriptions can be provided in the README, more detailed explanations should be kept separately (such as INSTALL(.md), linked there from README)
+- exception and failure messages are described in doc strings/function annotations
+- function documentation should be generated automatically and made available/searchable in the web (such as readthedocs, javadoc html, etc. pp.)
+
+
 
 ## Server documentation:
 
 This type of documentation is provided and maintained in our DARIAH wiki space.\
 
 We have a template encompassing all information necessary: To create a wiki page for a new server navigate to the FE Server list, select "..." right beside the "Create" button and search for "FE-Server".
+
 
 ## User Documentation
 
@@ -129,7 +160,7 @@ We have a template encompassing all information necessary: To create a wiki page
 
 - screencasts
 
-### CESSDA's Software Maturity Levels in RDD
+### CESSDA's Software Maturity Levels in RDD (CA1.1)
 
 #### MUST
 `MUST` be SML2, which is defined as follows:
