@@ -19,8 +19,8 @@ TODOs and addenda of this document are maintained [here](https://github.com/subu
 
 # Explanatory Notes
 
-**CESSDA's Software Maturity Levels (SML)**: Several organizations already have put a lot of work into developing metrics for good software. Since we didn't want to reinvent the wheel, we decided to adapt (and modify if need be) a metric which suits our needs. [CESSDA]() is one of the ERICs, and although it focuses on Social Sciences it has similar requirements regarding its software.
-\
+**CESSDA's Software Maturity Levels (SML)**: Several organizations already have put a lot of work into developing metrics for good software. Since we didn't want to reinvent the wheel, we decided to adapt (and modify if need be) a metric which suits our needs. [CESSDA](https://www.cessda.eu/) is one of the ERICs, and although it focuses on Social Sciences it has similar requirements regarding its software.
+
 Throughout the document you will find sections with the heading "CESSDA's Software Maturity Levels in RDD" in which we describe which of the SMLs we aim for and how we want to implement it.
 
 
@@ -55,7 +55,7 @@ the department.
 - **SPARQL**: For SPARQL there is not really any official style guide and there is no possibility to simply include any code style automatically using a code style file. We just collect some advice how to format and use SPARQL code [here](https://github.com/subugoe/rdd-technical-reference/tree/master/style-guides/rdd-sparql.md).
 
 
-# Is Your Software Fully Documented?
+# Documentation
 
 ## Doc Sprints
 
@@ -129,7 +129,26 @@ We have a template encompassing all information necessary: To create a wiki page
 
 - screencasts
 
-#### CESSDA's Software Maturity Levels in RDD
+### CESSDA's Software Maturity Levels in RDD
+
+#### MUST
+`MUST` be SML2, which is defined as follows:
+
+> Use is feasible: There is external documentation that is accessible and sufficient for an expert user to configure and use the software for the user’s individual needs. Terminology and methodology is not explained.
+
+##### Actions to be taken in RDD
+- a README(.md) has to be available in the source code repository (already defined in rdd-technical-reference, cf. @@TODO@@)
+
+#### SHOULD
+
+`SHOULD` be SML3, which is defined as follows:
+
+>Use is possible by most users: There is a user manual that can guide a reasonably skilled user through use and customisation of the software to the user’s individual requirements. Documentation is consistent with current version of the software.
+
+##### Actions to be taken in RDD
+- a more detailed explanation is available for the user at some place (such as user guide in wikis, etc. p.p)
+- docs should also be provided in a docs directory in the source code repository
+- docs are revised regularly during our doc sprints
 
 
 
