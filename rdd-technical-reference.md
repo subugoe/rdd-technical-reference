@@ -152,7 +152,7 @@ We have a template encompassing all information necessary: To create a wiki page
 
 
 
-# Which version control do you use? You do use version control, do you?
+# Version control
 
 We exclusively use git in RDD. Please see <https://git-scm.com/doc> for information on how it works.
 
