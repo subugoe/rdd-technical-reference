@@ -222,12 +222,12 @@ We have got an [RDD team on GitHub](https://github.com/orgs/subugoe/teams/fe). F
 Consider mirroring of repos for project visibility (e.g. mirror GitLab/Projects code to Github?)
 
 
-# Do you track your bugs properly?
+# Bug Tracking
 
 A bug tracking system is obligatory! Please use the respective bug tracking system of your repo and/or project management solution (please see chapter version control)!
 
 
-# Do you test your software?
+# Software Tests
 
 We aim to have a test coverage of **100%** (except for getter and setter methods). This is understood on a component level, which means that every method should have at least one test. Whether you achieve this by Test Driven Development (TDD) or not is specific to your preferred way to work.
 
