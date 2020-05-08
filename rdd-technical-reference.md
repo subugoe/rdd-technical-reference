@@ -142,7 +142,7 @@ Call diagrams can be useful to follow code and service calls and should be exist
 
 
 
-## Server documentation:
+## Server Documentation
 
 This type of documentation is provided and maintained in our DARIAH wiki space.\
 
@@ -249,7 +249,7 @@ The reason for using a build tool is to be able to build and/or test a code proj
 
 #### Build tools we are using at the moment
 
-* **bash scripting**: (BdNPrint, FontanePrint)
+* **bash scripting**: (bdnPrint, FontanePrint)
 * **eXist**: Ant (SADE)
 * **Java**:
     - Maven (TextGrid)
@@ -265,9 +265,22 @@ The reason for using a build tool is to be able to build and/or test a code proj
     - PIP (DiscussData)
 * **Ruby**: bundler (DARIAH status page)
 
-#### Build tools we want to evaluate
 
-* gradle
+## Packaging
+
+### CESSDA's Software Maturity Levels in RDD (CA5)
+
+##### MUST
+
+`MUST` be SML5, which is defined as follows:
+
+> Demonstrable usability: A Continuous Integration server job (or equivalent) is available to deploy the packaged/containerised software. Administrators are notified if deployment fails. Versions of deployed software can be upgraded/rolled back from a Continuous Integration server job (or equivalent). Data and/or index files can be restored from a Continuous Integration server job (or equivalent).
+
+##### Actions to be taken in RDD
+- examples for versions of deployed software: versioning of deb packages
+- examples for rollback: rebuild index ElasticSearch from source data, restore database backup
+
+
 
 ## Continuous Integration
 
@@ -320,6 +333,8 @@ For server configuration and setup we use puppet for most servers. The main pupp
 
 ### Release Management
 
+
+
 # Code quality level for RDD
 
 ## Code review
@@ -348,7 +363,9 @@ When preparing a proof of concept that is always labeled `poc`, a code review is
 not necessary.
 
 
-# Licensing
+# Intellectual Property
+
+## Licensing
 
 - clarify software license before programming
 
@@ -365,6 +382,170 @@ prepared like the table below, always in alphanumeric order.
 ```
 
 Maybe the `license-maven` plugin will help you.
+
+## CESSDA's Software Maturity Levels in RDD (CA2)
+
+##### MUST
+
+`MUST` be SML5, which is defined as follows:
+
+> Demonstrable usability: There are multiple statements embedded into the software product describing unrestricted rights and any conditions for use, including commercial and non-commercial use, and the recommended citation. The list of developers is embedded in the source code of the product, in the documentation, and in the expression of the software upon execution. The intellectual property rights statements are expressed in legal language, machine-readable code, and in concise statements in language that can be understood by laypersons, such as a pre-written, recognisable license.
+
+##### Actions to be taken in RDD
+- see rdd-technical-reference for choosing the license
+    - source code: use OSI approved licenses? (see https://opensource.org/licenses) (++TODO discuss in fe-develop++) (how to chose a license?: http://freesoftwaremagazine.com/articles/choosing_and_using_free_licenses_software_hardware_and_aesthetic_works/fig_choosing_license.jpg)
+        - assets: CC0? CC-BY-SA? (++TODO discuss in fe-develop++)
+- we reach SML5 by providing a license file on root level containing the license text (GPL wants its license text in a file called COPYING [see https://www.gnu.org/licenses/gpl-howto.de.html] other licenses use LICENSE)
+- if the license text is not contained in the license file, we provide the full license text in another file  (++TODO++) (https://softdev4research.github.io/4OSS-lesson/03-use-license/index.html#add-a-licence-file-to-a-repository)
+- in the source code header the license statement is added to every file. GPL example:
+
+```
+    This file is part of FOOBAR.
+
+    FOOBAR is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    FOOBAR is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with FOOBAR.  If not, see <https://www.gnu.org/licenses/>.
+```
+
+- the names of all contributed developers are stored in a contributors file on root level (every user that has committed in the repository)
+- in the source code the contributors are added to each class/method/function/file/etcpp
+- “and in the expression of the software upon execution“ -- if applicable
+
+# CESSDA – Decisions
+
+## CA3: Extensibility
+
+MUST be __SML3__:
+
+„Use is possible by most users: Future extensibility is designed into the system for a moderate range of use cases. The procedures for extending the software are defined, whether by source code modification or through the provision of some type of extension functionality (e.g., callback hooks or scripting capabilities). Where source code modification is part of the extension plan, the software is well-structured, has a moderate to high level of cohesion, and has configuration elements clearly separated from logic and display elements.“
+
+__Actions to be taken in RDD:__
+- Future extensibility is designed into the system
+    - on RDD developer level
+    - source code modification --> software is well-structured
+    - provision of some type of extension functionality --> use of frameworks such as templating engines and localization frameworks
+    - configuration elements clearly separated from logic and display elements
+- use SADE as example project
+
+
+## CA4: Modularity
+
+MUST be __SML3__:
+
+„Use is possible by most users: There is evidence that the architecture is open, with full structuring into individual components that provide functions or services to outside entities (i.e., open architecture); internal functions or services documented, but not consistently; modules have been created for generic functions, but modules have not been created for all of the specified functions; code within each module contains many independent logical paths.“
+
+SHOULD be __SML5__:
+
+„Demonstrable usability: It is evident that all functions and data are encapsulated into objects or accessible through web service interfaces. There is consistent error handling with meaningful messages and advice, and use of generic extensions to program languages for stronger type checking and compilation-time error checking. Services are available externally and code within each module contains few independent logical paths.“
+
+__Actions to be taken in RDD:__
+- we NEED consistent error handling with meaningful messages and advice
+- if specific errors can occur --> create explicit errors
+- return and input types must be defined if language allows types
+- think of possible reuse of internal methods --> make them externally available
+- one module serves one purpose
+
+
+## CA6: Portability
+
+(target platform: e.g. Docker container)
+
+MUST BE __SML5__:
+
+„Demonstrable usability: The software is completely portable to the target platform. In theory at least, the software will run on the target platform provided it is packaged/containerised.“
+
+__Actions to be taken in RDD:__
+- examples for target platforms: TextGridLab (Windows, Linux, Mac OS), Java Web Services (Web Application Server: Tomcat, etcpp), SADE (eXistDB, Linux, Windows), DiscussData-Django-App (jeder Host, für den Docker verfügbar ist)
+
+    ++ Michelle möchte, dass wir mehr über Docker sprechen! ++
+
+
+## CA7: Standards Compliance
+
+MUST BE __SML3__:
+
+„Use is possible by most users: The software and software development process comply with open, recognised or proprietary standards, but there is incomplete verification of compliance. Compliance to recognised standards has be tested but this may not be for all components. There is documented evidence of standards being used, but not of the verification of components.“
+
+__Actions to be taken in RDD:__
+- coding standards: code style, git (commit hooks), gitflow/gitlabflow, (semantic) versioning
+- software standards: documentation (JavaDoc, OpenAPI, etcpp), data and metadata formats, APIs (REST, SOAP, OAI-PMH, etcpp), license
+- CI standards: release workflow (?), deployment
+
+
+## CA8: Support
+
+MUST BE __SML1__:
+__Actions to be taken in RDD:__
+- an organizational e-mail-adress must be provided with the readme and in a convenient view, e.g. imprint/help/info etc.
+
+SHOULD BE __SML3__:
+__Actions to be taken in RDD:__
+- provide support "near" the source code (discussable)
+- by any means, provide it in *one* location
+- regular and planned releases
+
+
+## CA9: Verification and Testing
+
+__Actions to be taken in RDD:__
+- CESSDAs definitions seems a bit unclear to us
+- without referencing the SMLs we link our test chapter to CESSDAs document
+
+
+## CA10: Security
+
+MUST BE __SML2__:
+
+__Actions to be taken in RDD:__
+- every developer must have had a basic security training
+
+SHOULD BE __SML5__:
+
+__Actions to be taken in RDD:__
+- address security in every step of development (design, implementation, testing and verification, release)
+
+__TODO__:
+- mit AL über Training für alle Developer sprechen
+- Anforderungen an Softwaresicherheit formulieren
+- Training erarbeiten (mit Security-Issue-Liste beginnen)
+
+
+## CA11: Internationalisation and Localisation
+
+MUST BE __SML1,5__
+
+__Actions to be taken in RDD:__
+- locale awareness is a high requirement for software with a monolingual target audience but you must provide it in english (and/or the target language) at least
+
+SHOULD BE __SML3__
+
+__Actions to be taken in RDD:__
+- if applicable, i18n and l10n frameworks should be used
+
+nice to read: https://bridge360blog.com/2011/11/25/software-design-considerations-for-internationalization-and-localization/
+
+
+## CA12: Authentication and Authorisation
+
+MUST BE __SML2__
+SHOULD BE __SML4__
+
+In this case we cannot give a general recommendation since the way authentication and authorisation is implemented inherently depends on the software's functionality. Instead of developing an own solution rely on DARIAH's AAI whenever possible.
+
+__Actions to be taken in RDD:__
+- never share passwords
+- use Shibboleth whenever possible and reasonable
+
+
 
 # Retirement of software
 
